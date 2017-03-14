@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_MoneySystem", "MoneySy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc_Service", "Calc_Modul\Calc_Service.csproj", "{E6D8FB69-1467-40B3-8F1C-EFB39DF79116}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortArrays2", "SortArrays2\SortArrays2.csproj", "{99E71F38-04E5-48B8-AA3A-13958E45F091}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E6D8FB69-1467-40B3-8F1C-EFB39DF79116}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6D8FB69-1467-40B3-8F1C-EFB39DF79116}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6D8FB69-1467-40B3-8F1C-EFB39DF79116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E71F38-04E5-48B8-AA3A-13958E45F091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E71F38-04E5-48B8-AA3A-13958E45F091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E71F38-04E5-48B8-AA3A-13958E45F091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E71F38-04E5-48B8-AA3A-13958E45F091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,6 @@
+D:\Gitprojects\MyProjects\SortArrays2\bin\Debug\)7_SortArrays.exe.config
+D:\Gitprojects\MyProjects\SortArrays2\bin\Debug\)7_SortArrays.exe
+D:\Gitprojects\MyProjects\SortArrays2\bin\Debug\)7_SortArrays.pdb
+D:\Gitprojects\MyProjects\SortArrays2\obj\Debug\SortArrays2.csprojResolveAssemblyReference.cache
+D:\Gitprojects\MyProjects\SortArrays2\obj\Debug\)7_SortArrays.exe
+D:\Gitprojects\MyProjects\SortArrays2\obj\Debug\)7_SortArrays.pdb
