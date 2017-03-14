@@ -1,0 +1,6 @@
+D:\Gitprojects\MyProjects\Service\bin\Debug\501_Service.exe.config
+D:\Gitprojects\MyProjects\Service\bin\Debug\501_Service.exe
+D:\Gitprojects\MyProjects\Service\bin\Debug\501_Service.pdb
+D:\Gitprojects\MyProjects\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\Gitprojects\MyProjects\Service\obj\Debug\501_Service.exe
+D:\Gitprojects\MyProjects\Service\obj\Debug\501_Service.pdb
