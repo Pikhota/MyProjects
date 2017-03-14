@@ -1,0 +1,5 @@
+D:\Gitprojects\MyProjects\SortArrays\bin\Debug\)7_SortArrays.exe.config
+D:\Gitprojects\MyProjects\SortArrays\bin\Debug\)7_SortArrays.exe
+D:\Gitprojects\MyProjects\SortArrays\bin\Debug\)7_SortArrays.pdb
+D:\Gitprojects\MyProjects\SortArrays\obj\Debug\)7_SortArrays.exe
+D:\Gitprojects\MyProjects\SortArrays\obj\Debug\)7_SortArrays.pdb
