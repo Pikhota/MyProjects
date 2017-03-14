@@ -1,0 +1,7 @@
+D:\Gitprojects\MyProjects\Calc_Modul\bin\Debug\10_Calc_Modul.exe.config
+D:\Gitprojects\MyProjects\Calc_Modul\bin\Debug\10_Calc_Modul.exe
+D:\Gitprojects\MyProjects\Calc_Modul\bin\Debug\10_Calc_Modul.pdb
+D:\Gitprojects\MyProjects\Calc_Modul\bin\Debug\Newtonsoft.Json.dll
+D:\Gitprojects\MyProjects\Calc_Modul\obj\Debug\Calc_Service.csprojResolveAssemblyReference.cache
+D:\Gitprojects\MyProjects\Calc_Modul\obj\Debug\10_Calc_Modul.exe
+D:\Gitprojects\MyProjects\Calc_Modul\obj\Debug\10_Calc_Modul.pdb

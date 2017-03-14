@@ -1,0 +1,1 @@
+sc create CalculationService binPath="D:\Gitprojects\GroupProject\09_Sergei\Service_Caltulation\bin\Debug\srv_calc.exe" DisplayName= "GitServiceCalculation"
