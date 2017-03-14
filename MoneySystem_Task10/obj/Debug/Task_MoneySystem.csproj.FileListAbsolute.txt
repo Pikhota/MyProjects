@@ -1,0 +1,5 @@
+D:\Gitprojects\MyProjects\MoneySystem_Task10\bin\Debug\MoneySystem.exe.config
+D:\Gitprojects\MyProjects\MoneySystem_Task10\bin\Debug\MoneySystem.exe
+D:\Gitprojects\MyProjects\MoneySystem_Task10\bin\Debug\MoneySystem.pdb
+D:\Gitprojects\MyProjects\MoneySystem_Task10\obj\Debug\MoneySystem.exe
+D:\Gitprojects\MyProjects\MoneySystem_Task10\obj\Debug\MoneySystem.pdb
