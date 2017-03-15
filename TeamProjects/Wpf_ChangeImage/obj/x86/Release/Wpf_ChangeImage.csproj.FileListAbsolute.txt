@@ -1,0 +1,63 @@
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\MainWindow.baml
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\MainWindow.g.cs
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\App.g.cs
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.g.resources
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Window1.baml
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\MainWindow.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Window1.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\App.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_MarkupCompile.lref
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\MainWindow.baml
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.g.resources
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.exe
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.pdb
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.exe
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.pdb
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Window1.baml
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\MainWindow.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Window1.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\App.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_MarkupCompile.lref
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\MainWindow.baml
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.g.resources
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Window1.baml
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\MainWindow.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Window1.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\App.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_Content.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage_MarkupCompile.lref
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\bin\Release\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\MainWindow.baml
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.g.resources
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2.1\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.exe
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2.1\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Release\Wpf_ChangeImage.pdb

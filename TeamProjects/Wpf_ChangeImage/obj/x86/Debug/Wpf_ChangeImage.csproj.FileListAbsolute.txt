@@ -1,0 +1,151 @@
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\язва\язва\Wpf_ChangeImage\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Sergey\Desktop\язва\язва\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Sergey\Desktop\язва\Тест_проэкт\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\New folder (2)\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Sergey\Desktop\Wpf Test\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Daniel\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Sergey\Desktop\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Window1.baml
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Window1.g.cs
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Daniel\Desktop\язззз\Yazva_final_beta\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.lref
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Window1.baml
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Window1.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.lref
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Sergey\Desktop\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Window1.baml
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Window1.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.lref
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Serhiy\AppData\Roaming\Skype\My Skype Received Files\Yazva_final_beta2\Yazva_final_beta2\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.exe
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\bin\Debug\Wpf_ChangeImage.pdb
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Window1.baml
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Window1.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\App.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_Content.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.cache
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage_MarkupCompile.lref
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\MainWindow.baml
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.g.resources
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.Properties.Resources.resources
+C:\Users\Daniel\Desktop\Yazva_final_beta2.1\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.csproj.GenerateResource.Cache
+D:\Gitprojects\MyProjects\TeamProjects\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.exe
+D:\Gitprojects\MyProjects\TeamProjects\Wpf_ChangeImage\obj\x86\Debug\Wpf_ChangeImage.pdb
