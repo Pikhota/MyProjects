@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ButtonsProject" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
+        <Grid>
+            <TextBlock Margin="42.654,16.944,32.512,10.918" TextWrapping="Wrap" Text="" d:LayoutOverrides="Width, Height" TextDecorations="{x:Null}" d:IsHidden="True"/>
+        </Grid>
+    </ControlTemplate>
+
+</ResourceDictionary>

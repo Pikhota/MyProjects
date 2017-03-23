@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BattleShip"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="BattleShip" Height="400" Width="600">
     <Window.Background>
         <ImageBrush ImageSource="/Resources/Images/bg_battleship.jpg"/>
     </Window.Background>
-    <Grid>
-        <StackPanel>
-            <Button Content="Play" Margin="200,80,200,0" Height="35"/>
-            <Button Content="Network" Margin="200,0,200,0" Height="35"/>
-            <Button Content="About" Margin="200,0,200,0" Height="35"/>
-            <Button Content="Exit" Margin="200,0,200,0" Height="35"/>
+    <Grid >
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <Button Content="Play"  Margin="200,80,200,0" Width="100" Height="35"/>
+            <Button Content="Network" Margin="200,0,200,0" Width="100" Height="35"/>
+            <Button Content="About" Margin="200,0,200,0" Width="100" Height="35"/>
+            <Button Content="Exit" Margin="200,0,200,0" Width="100" Height="35"/>
         </StackPanel>
     </Grid>
 </Window>
