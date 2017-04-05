@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Shapes;
 
 namespace Pacman
 {
@@ -12,16 +13,50 @@ namespace Pacman
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public Pac Pac = new Pac();
+        public DoubleAnimation AnimationX = new DoubleAnimation();
+        public DoubleAnimation AnimationY = new DoubleAnimation();
+        public RectangleGeometry GeometryPac = new RectangleGeometry();
+        private const double Step = 5;
+
         public MainWindow()
         {
-            
-            InitializeComponent(); 
+
+            InitializeComponent();
+
             KeyDown += Moving;
-            Pac.Speed = 1500;
-            Pacman.RenderTransform = Pac.Trans;
-            Wall.Xleft = 50;
-            Wall.Xright = 110;
+
+            #region Создание пакмена
+            Pac.PacPath.Stroke = Brushes.Yellow;
+            Pac.PacPath.StrokeThickness = 1;
+            Pac.PacPath.Fill = Pac.SolidColorBrush;
+            GeometryPac.RadiusX = 26;
+            GeometryPac.RadiusY = 26;
+            GeometryPac.Rect = Pac.Pacman;
+            Pac.PacPath.Data = GeometryPac;
+            Win.Children.Add(Pac.PacPath);
+            #endregion
+            Pac.PacPath.RenderTransform = Pac.Trans;
         }
+
+        #region Проверка на столкновение со стеной
+        private bool CollisionWall()
+        {
+            var flag = false;
+            Rectangle []walls = new Rectangle[]{ WallA1, WallA2, WallA3, WallA4,WallA5,WallA6,WallA7,WallA8,WallC1,WallC2,WallC3
+            , WallM1,WallM2,WallM3,WallM4,WallM5,WallN1,WallN2,WallN3,WallP1,WallP2,WallP3,WallP4};
+            foreach(var wall in walls)
+            {
+                Rect rect = GetWall(wall);
+                if(Pac.Pacman.IntersectsWith(rect))
+                {
+                    flag = true;
+                }
+            }
+            return flag;            
+        }
+        #endregion
 
         #region Движение пакмена по событию (нажатие на клавиши - стрелочки)
         private void Moving(object sender, KeyEventArgs e)
@@ -29,126 +64,99 @@ namespace Pacman
             switch (e.Key)
             {
                 case Key.Right:
-                    Pac.Speed = 1500;
-                    Pac.X = Pac.Trans.X;
-                    if (Pac.X > Pacman.Margin.Left / 2)
+                    Pac.Pacman.X = Pac.Trans.X;
+                    if (Pac.Pacman.X < Win.Width - Pac.Pacman.Width - GeometryPac.RadiusX / 2 - Step)
                     {
-                        Pac.Speed = 500;
+                        if (CollisionWall())
+                        {
+                            AnimationX = new DoubleAnimation(Pac.Pacman.X - Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                            AnimateY();
+                        }
+                        else
+                        {
+                            AnimationX = new DoubleAnimation(Pac.Pacman.X + Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                            AnimateY();
+                        }
                     }
-                    else if (Pac.X > Pacman.Margin.Left / 4)
-                    {
-                        Pac.Speed = 1000;
-                    }
-                    else if (Pac.X < -Pacman.Margin.Left / 2)
-                    {
-                        Pac.Speed = 2500;
-                    }
-                    else if (Pac.X < -Pacman.Margin.Left / 4)
-                    {
-                        Pac.Speed = 1000;
-                    }
-                    while (Pac.X <= Width - Pacman.Margin.Left - Pacman.Width - Pacman.RadiusX / 2)
-                    {
-                        var animationX = new DoubleAnimation(Pac.X++, TimeSpan.FromMilliseconds(Pac.Speed));
-                        label.Content = Pac.Speed;
-                        Pac.Trans.BeginAnimation(TranslateTransform.XProperty, animationX);
-                        var animationY = new DoubleAnimation(Pac.Trans.Y, TimeSpan.FromMilliseconds(Pac.Speed));
-                        Pac.Trans.BeginAnimation(TranslateTransform.YProperty, animationY);
-                    }
-                    labelX.Content = Pac.Trans.X;
                     break;
                 case Key.Left:
-                    Pac.Speed = 1500;
-                    Pac.X = Pac.Trans.X;
-                    if (Pac.X < -Pacman.Margin.Left / 2)
+                    Pac.Pacman.X = Pac.Trans.X;
+                    if (Pac.Pacman.X > 0)
                     {
-                        Pac.Speed = 500;
+                        if (CollisionWall())
+                        {
+                            AnimationX = new DoubleAnimation(Pac.Pacman.X + Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                            AnimateY();
+                        }
+                        else
+                        {
+                            AnimationX = new DoubleAnimation(Pac.Pacman.X - Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                            AnimateY();
+                        }
                     }
-                    else if (Pac.X < -Pacman.Margin.Left/4)
-                    {
-                        Pac.Speed = 1000;
-                    }
-                    else if (Pac.X > Pacman.Margin.Left / 2)
-                    {
-                        Pac.Speed = 2500;
-                    }
-                    else if (Pac.X > Pacman.Margin.Left / 4)
-                    {
-                        Pac.Speed = 2000;
-                    }
-                    while (Pac.X >= -Pacman.Margin.Left)
-                    {
-                        var animationX = new DoubleAnimation(Pac.X--, TimeSpan.FromMilliseconds(Pac.Speed));
-                        Pac.Trans.BeginAnimation(TranslateTransform.XProperty, animationX);
-                        var animationY = new DoubleAnimation(Pac.Trans.Y, TimeSpan.FromMilliseconds(Pac.Speed));
-                        Pac.Trans.BeginAnimation(TranslateTransform.YProperty, animationY);
-                        label.Content = Pac.Speed;
-                    }
-                    labelX.Content = Pac.Trans.X;
                     break;
                 case Key.Up:
-                    Pac.Speed = 1500;
-                    Pac.Y = Pac.Trans.Y;
-                    if (Pac.Y < -Pacman.Margin.Top / 2)
+                    Pac.Pacman.Y = Pac.Trans.Y;
+                    if (Pac.Pacman.Y > 0)
                     {
-                        Pac.Speed = 1000;
+                        if (CollisionWall())
+                        {
+                            AnimateX();
+                            AnimationY = new DoubleAnimation(Pac.Pacman.Y + Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                        }
+                        else
+                        {
+                            AnimationX = new DoubleAnimation(Pac.Trans.X, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                            AnimationY = new DoubleAnimation(Pac.Pacman.Y - Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                        }
                     }
-                    else if (Pac.Y < -Pacman.Margin.Left / 4)
-                    {
-                        Pac.Speed = 1500;
-                    }
-                    else if (Pac.Y > -Pacman.Margin.Left / 2)
-                    {
-                        Pac.Speed = 2000;
-                    }
-                    else if (Pac.Y > -Pacman.Margin.Left / 4)
-                    {
-                        Pac.Speed = 2000;
-                    }
-                    while (Pac.Y >= -Pacman.Margin.Top)
-                    {
-                        var animationX = new DoubleAnimation(Pac.Trans.X, TimeSpan.FromMilliseconds(Pac.Speed));
-                        Pac.Trans.BeginAnimation(TranslateTransform.XProperty, animationX);
-                        var animationY = new DoubleAnimation(Pac.Y--, TimeSpan.FromMilliseconds(Pac.Speed));
-                        Pac.Trans.BeginAnimation(TranslateTransform.YProperty, animationY);
-                        label1.Content = Pac.Speed;
-                    }
-                    labelY.Content = Pac.Trans.Y;
                     break;
                 case Key.Down:
-                    Pac.Speed = 1500;
-                    Pac.Y = Pac.Trans.Y;
-                    if (Pac.Y > -Pacman.Margin.Left / 2)
+                    Pac.Pacman.Y = Pac.Trans.Y;
+                    if (Pac.Pacman.Y < Win.Height - Pac.Pacman.Height - GeometryPac.RadiusX / 2 - Step)
                     {
-                        Pac.Speed = 500;
+                        if (CollisionWall())
+                        {
+                            AnimateX();
+                            AnimationY = new DoubleAnimation(Pac.Pacman.Y - Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                        }
+                        else
+                        {
+                            AnimateX();
+                            AnimationY = new DoubleAnimation(Pac.Pacman.Y + Step, TimeSpan.FromMilliseconds(Pac.Speed));
+                            Pac.Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                        }
                     }
-                    else if (Pac.Y > -Pacman.Margin.Left / 4)
-                    {
-                        Pac.Speed = 1500;
-                    }
-                    else if (Pac.Y < -Pacman.Margin.Top / 2)
-                    {
-                        Pac.Speed = 2000;
-                    }
-                    else if (Pac.Y < -Pacman.Margin.Left / 4)
-                    {
-                        Pac.Speed = 1000;
-                    }
-                    while (Pac.Y <= Height - 25 - Pacman.Height - Pacman.RadiusY / 2 - Pacman.Margin.Top)
-                    {
-                        var animationX = new DoubleAnimation(Pac.Trans.X, TimeSpan.FromMilliseconds(Pac.Speed));
-                        Pac.Trans.BeginAnimation(TranslateTransform.XProperty, animationX);
-                        var animationY = new DoubleAnimation(Pac.Y++, TimeSpan.FromMilliseconds(Pac.Speed));
-                        Pac.Trans.BeginAnimation(TranslateTransform.YProperty, animationY);
-                        label1.Content = Pac.Speed;
-                    }
-                    labelY.Content = Pac.Trans.Y;
                     break;
-                case Key.Space:
-                break;                
             }
         }
         #endregion
+        #region Вспомогающие методы (уменьшение дублированого кода и т.п.)
+        private void AnimateX()
+        {
+            AnimationX = new DoubleAnimation(Pac.Trans.X, TimeSpan.FromMilliseconds(Pac.Speed));
+            Pac.Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+        }
 
+        private void AnimateY()
+        {
+            AnimationY = new DoubleAnimation(Pac.Trans.Y, TimeSpan.FromMilliseconds(Pac.Speed));
+            Pac.Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+        }
+
+        private Rect GetWall(Rectangle wall)
+        {
+            GeneralTransform TransWall = wall.TransformToVisual(this);
+            return TransWall.TransformBounds(new Rect(new Size(wall.ActualWidth, wall.ActualHeight)));
+        }
+        #endregion
     }
 }

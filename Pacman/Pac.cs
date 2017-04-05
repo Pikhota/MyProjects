@@ -1,16 +1,16 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Pacman
 {
-    internal static class Pac
+    public class Pac
     {
-        public static double X { get; set; }
-        public static double Y { get; set; }
-        public static double Speed { get; set; }
-        public static TranslateTransform Trans = new TranslateTransform();
-        public static double Time { get; set; }
+        public  double Speed = 0;
+        public  Rect Pacman = new Rect(0, 0, 50, 50);
+        public  TranslateTransform Trans = new TranslateTransform();
+        public  SolidColorBrush SolidColorBrush = new SolidColorBrush { Color = Color.FromRgb(255,250,0) };
+        public  Path PacPath =new Path();
     }
 
 }

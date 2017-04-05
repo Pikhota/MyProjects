@@ -5,30 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="Pacman" Height="600" Width="800">
-    <Grid Margin="0,-1,-0.4,1.4">
-        <Rectangle x:Name="Pacman" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" RadiusY="26" RadiusX="26" Margin="393,510,0,0">
-            <Rectangle.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FFF4EE14" Offset="1"/>
-                    <GradientStop Color="#FFE5DF2C"/>
-                </RadialGradientBrush>
-            </Rectangle.Fill>
+        Title="Pacman" Height="625" Width="800">
+    <Canvas x:Name="Win" Height="600" Width="800">
+        <Rectangle x:Name="WallP1" Fill="#FFF4F4F5" Height="196" Canvas.Left="56" Stroke="Black" Canvas.Top="64" Width="69"/>
+        <Rectangle x:Name="WallP2" Fill="#FFF4F4F5" Height="37" Canvas.Left="125" Stroke="Black" Canvas.Top="62" Width="86"/>
+        <Rectangle x:Name="WallP3" Fill="#FFF4F4F5" Height="46" Canvas.Left="211" Stroke="Black" Canvas.Top="99" Width="40"/>
+        <Rectangle x:Name="WallP4" Fill="#FFF4F4F5" Height="37" Canvas.Left="125" Stroke="Black" Canvas.Top="145" Width="86"/>
+        <Rectangle x:Name="WallA1" Fill="#FFF4F4F5" Height="159" Canvas.Left="330" Stroke="Black" Canvas.Top="94" Width="48"/>
+        <Rectangle x:Name="WallA2" Fill="#FFF4F4F5" Height="37" Canvas.Left="378" Stroke="Black" Canvas.Top="62" Width="52" />
+        <Rectangle x:Name="WallA3" Fill="#FFF4F4F5" Height="34" Canvas.Left="378" Stroke="Black" Canvas.Top="148" Width="52"/>
+        <Rectangle x:Name="WallA4" Fill="#FFF4F4F5" Height="154" Canvas.Left="430" Stroke="Black" Canvas.Top="99" Width="45"/>
+        <Rectangle x:Name="WallC1" Fill="#FFF4F4F5" Height="109" Canvas.Left="549" Stroke="Black" Canvas.Top="99" Width="57"/>
+        <Rectangle x:Name="WallC2" Fill="#FFF4F4F5" Height="37" Canvas.Left="584" Stroke="Black" Canvas.Top="62" Width="136"/>
+        <Rectangle x:Name="WallC3" Fill="#FFF4F4F5" Height="45" Canvas.Left="584" Stroke="Black" Canvas.Top="208" Width="136"/>
+        <Rectangle x:Name="WallM1" Fill="#FFF4F4F5" Height="183" Canvas.Left="56" Stroke="Black" Canvas.Top="337" Width="39"/>
+        <Rectangle x:Name="WallM2" Fill="#FFF4F4F5" Height="54" Canvas.Left="95" Stroke="Black" Canvas.Top="357" Width="30"/>
+        <Rectangle x:Name="WallM3" Fill="#FFF4F4F5" Height="62" Canvas.Left="125" Stroke="Black" Canvas.Top="411" Width="49"/>
+        <Rectangle x:Name="WallM4" Fill="#FFF4F4F5" Height="54" Canvas.Left="171" Stroke="Black" Canvas.Top="357" Width="35"/>
+        <Rectangle x:Name="WallM5" Fill="#FFF4F4F5" Height="183" Canvas.Left="206" Stroke="Black" Canvas.Top="337" Width="38"/>
+        <Rectangle x:Name="WallA5" Fill="#FFF4F4F5" Height="183" Canvas.Left="330" Stroke="Black" Canvas.Top="337" Width="48"/>
+        <Rectangle x:Name="WallA6" Fill="#FFF4F4F5" Height="34" Canvas.Left="378" Stroke="Black" Canvas.Top="323" Width="52"/>
+        <Rectangle x:Name="WallA7" Fill="#FFF4F4F5" Height="34" Canvas.Left="378" Stroke="Black" Canvas.Top="411" Width="52"/>
+        <Rectangle x:Name="WallA8" Fill="#FFF4F4F5" Height="183" Canvas.Left="430" Stroke="Black" Canvas.Top="337" Width="45"/>
+        <Rectangle x:Name="WallN1" Fill="#FFF4F4F5" Height="183" Canvas.Left="549" Stroke="Black" Canvas.Top="337" Width="45"/>
+        <Rectangle x:Name="WallN2" Fill="#FFF4F4F5" Height="183" Canvas.Left="675" Stroke="Black" Canvas.Top="337" Width="45"/>
+        <Rectangle x:Name="WallN3" Fill="#FFF4F4F5" Height="24" Canvas.Left="540" Stroke="Black" Canvas.Top="424" Width="196" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="55.216"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="W1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="190" Margin="55,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="55"/>
-        <Rectangle x:Name="W2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="55,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="55"/>
-        <Label x:Name="label" Content="SpeedX" HorizontalAlignment="Left" Margin="683,483,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.391,-1.984"/>
-        <Label x:Name="label1" Content="SpeedY" HorizontalAlignment="Left" Margin="683,523,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="X" HorizontalAlignment="Left" Margin="683,405,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="Y" HorizontalAlignment="Left" Margin="683,449,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelX" Content="" HorizontalAlignment="Left" Margin="716,405,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelY" Content="" HorizontalAlignment="Left" Margin="716,449,0,0" VerticalAlignment="Top"/>
-        <Rectangle Fill="#FFF4F4F5" Height="55" Margin="109.6,0,351,170.8" Stroke="Black" VerticalAlignment="Bottom"/>
-        <Rectangle Fill="#FFF4F4F5" Height="48.96" Margin="55,0,350.6,61.84" Stroke="Black" VerticalAlignment="Bottom"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="49" Margin="0,0,60.6,95.4" Stroke="Black" VerticalAlignment="Bottom" Width="216"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Right" Margin="0,163.8,211.4,170.8" Stroke="Black" Width="65.6"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Right" Margin="0,163.8,68,175.533" Stroke="Black" Width="88.4"/>
-        <Rectangle Fill="#FFF4F4F5" Height="56.2" Margin="170,50,68,0" Stroke="Black" VerticalAlignment="Top"/>
-
-    </Grid>
+    </Canvas>
 </Window>
