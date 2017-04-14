@@ -180,10 +180,10 @@ namespace Pacman
                     }
                     break;
             }
-            if (CollisionGhost())
-            {
-                Life.Content = LifeCount--;
-            }
+            //if (CollisionGhost())
+            //{
+            //    Life.Content = LifeCount--;
+            //}
         }
         #endregion
         #region Вспомогающие методы (уменьшение дублированого кода и т.п.)

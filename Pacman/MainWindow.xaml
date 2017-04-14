@@ -6,7 +6,7 @@
         x:Class="Pacman.MainWindow"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="Pacman" Height="700" Width="800" Icon="pack://siteoforigin:,,,/Resources/Pacman.png" Topmost="True">
+        Title="Pacman" Height="625" Width="900" Icon="pack://siteoforigin:,,,/Resources/Pacman.png" Topmost="True">
     <Window.Resources>
         <Storyboard x:Key="MoveGhost" RepeatBehavior="Forever" AutoReverse="False">
             <DoubleAnimationUsingPath Duration="0:1:0" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ImgGhostViolet">
@@ -63,213 +63,220 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    <Window.Background>
-        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/grass.jpg"/>
-    </Window.Background>
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard x:Name="MoveGhostBeginStoryboard" Storyboard="{StaticResource MoveGhost}"/>
         </EventTrigger>
     </Window.Triggers>
 
-    <Canvas x:Name="Win" Height="600" Width="800">
-        <GroupBox x:Name="Group">
-            <Rectangle>
+    <Grid Width="900">
+        <Grid.Background>
+            <ImageBrush ImageSource ="pack://siteoforigin:,,,/Resources/wall.jpg" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="Win" Height="600" Width="800">
+            <Canvas.Background>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/grass.jpg"/>
+            </Canvas.Background>
+            <GroupBox x:Name="Group">
+                <Rectangle>
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </GroupBox>
+            <Image x:Name="ImgPacman" Source="pack://siteoforigin:,,,/Resources/Pacman.png" Height="50" Width="50" >
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Pacman.png" TileMode="FlipXY"/>
+                </Image.OpacityMask>
+            </Image>
+
+            <Image x:Name="ImgGhostWhite" Source="pack://siteoforigin:,,,/Resources/приведение.png" Height="60" Width="60" Margin="487,337" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение.png" TileMode="FlipXY"/>
+                </Image.OpacityMask>
+            </Image>
+            <Image x:Name="ImgGhostRed" Source="pack://siteoforigin:,,,/Resources/приведение_красное.png" Height="60" Width="60" Margin="265,337" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение_красное.png" TileMode="FlipXY"/>
+                </Image.OpacityMask>
+            </Image>
+            <Image x:Name="ImgGhostYellow" Source="pack://siteoforigin:,,,/Resources/приведение_желтое.png" Height="60" Width="60" Margin="480,193" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение_желтое.png" TileMode="FlipXY"/>
+                </Image.OpacityMask>
+            </Image>
+            <Image x:Name="ImgGhostViolet" Source="pack://siteoforigin:,,,/Resources/приведение_фиолетовое.png" Height="60" Width="60" Margin="265,200" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение_фиолетовое.png" TileMode="FlipXY"/>
+                </Image.OpacityMask>
+            </Image>
+            <Rectangle  x:Name="WallP1" Height="196" Margin="56,64" Stroke="Black"  Width="69">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
-        </GroupBox>
-        <Image x:Name="ImgPacman" Source="pack://siteoforigin:,,,/Resources/Pacman.png" Height="50" Width="50" >
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Pacman.png" TileMode="FlipXY"/>
-            </Image.OpacityMask>
-        </Image>
-
-        <Image x:Name="ImgGhostWhite" Source="pack://siteoforigin:,,,/Resources/приведение.png" Height="60" Width="60" Canvas.Left="487" Canvas.Top="337" RenderTransformOrigin="0.5,0.5" >
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение.png" TileMode="FlipXY"/>
-            </Image.OpacityMask>
-        </Image>
-        <Image x:Name="ImgGhostRed" Source="pack://siteoforigin:,,,/Resources/приведение_красное.png" Height="60" Width="60" Canvas.Left="265" Canvas.Top="337" RenderTransformOrigin="0.5,0.5" >
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение_красное.png" TileMode="FlipXY"/>
-            </Image.OpacityMask>
-        </Image>
-        <Image x:Name="ImgGhostYellow" Source="pack://siteoforigin:,,,/Resources/приведение_желтое.png" Height="60" Width="60" Canvas.Left="480" Canvas.Top="193" RenderTransformOrigin="0.5,0.5" >
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение_желтое.png" TileMode="FlipXY"/>
-            </Image.OpacityMask>
-        </Image>
-        <Image x:Name="ImgGhostViolet" Source="pack://siteoforigin:,,,/Resources/приведение_фиолетовое.png" Height="60" Width="60" Canvas.Left="265" Canvas.Top="200" RenderTransformOrigin="0.5,0.5" >
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/приведение_фиолетовое.png" TileMode="FlipXY"/>
-            </Image.OpacityMask>
-        </Image>
-        <Rectangle  x:Name="WallP1" Height="196" Canvas.Left="56" Stroke="Black" Canvas.Top="64" Width="69">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallP2" Height="37" Canvas.Left="125" Stroke="Black" Canvas.Top="62" Width="86">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallP3"  Height="46" Canvas.Left="211" Stroke="Black" Canvas.Top="99" Width="40">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallP4"  Height="37" Canvas.Left="125" Stroke="Black" Canvas.Top="145" Width="86">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA1"  Height="159" Canvas.Left="330" Stroke="Black" Canvas.Top="94" Width="48">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA2"  Height="37" Canvas.Left="378" Stroke="Black" Canvas.Top="62" Width="52" >
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA3"  Height="34" Canvas.Left="378" Stroke="Black" Canvas.Top="148" Width="52">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA4"  Height="154" Canvas.Left="430" Stroke="Black" Canvas.Top="99" Width="45">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallC1"  Height="109" Canvas.Left="549" Stroke="Black" Canvas.Top="99" Width="57">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallC2"  Height="37" Canvas.Left="584" Stroke="Black" Canvas.Top="62" Width="136">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallC3"  Height="45" Canvas.Left="584" Stroke="Black" Canvas.Top="208" Width="136">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallM1"  Height="183" Canvas.Left="56" Stroke="Black" Canvas.Top="337" Width="39">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallM2"  Height="54" Canvas.Left="95" Stroke="Black" Canvas.Top="357" Width="30">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallM3"  Height="62" Canvas.Left="125" Stroke="Black" Canvas.Top="411" Width="49">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallM4"  Height="54" Canvas.Left="171" Stroke="Black" Canvas.Top="357" Width="35">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallM5"  Height="183" Canvas.Left="206" Stroke="Black" Canvas.Top="337" Width="38">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA5"  Height="183" Canvas.Left="330" Stroke="Black" Canvas.Top="337" Width="48">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA6"  Height="34" Canvas.Left="378" Stroke="Black" Canvas.Top="323" Width="52">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA7"  Height="34" Canvas.Left="378" Stroke="Black" Canvas.Top="411" Width="52">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallA8"  Height="183" Canvas.Left="430" Stroke="Black" Canvas.Top="337" Width="45">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallN1"  Height="183" Canvas.Left="549" Stroke="Black" Canvas.Top="337" Width="45">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallN2"  Height="183" Canvas.Left="675" Stroke="Black" Canvas.Top="337" Width="45">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="WallN3"  Height="24" Canvas.Left="540" Stroke="Black" Canvas.Top="424" Width="196" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="55.216"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Path x:Name="PathVioletGhost" Data="M296.2,225 C160.2,225 159.70001,225 159.70001,225 L158.10001,301.3 33.402548,299.7013 33.300001,299.69999 25.299999,34.100031 286.10001,38.900028 294.10001,558.89995 28.499999,557.29996 33.3,315.69999 513.30002,293.3 513.30002,29.30003 756.50007,26.10003 756.50007,290.1 521.30004,299.7 514.90004,547.69996 758.10006,552.49996 758.10006,298.1 300.50001,291.7 282.90001,544.49997 505.30002,547.69996 510.10002,309.3 C510.10002,309.3 281.30001,288.5 281.30001,288.5 295.70001,222.90001 296.2,225 296.2,225 z" Height="533.8" Canvas.Left="25.3" Stretch="Fill" Stroke="Black" Canvas.Top="26.1" Width="733.8"/>
-        <Path x:Name="PathYellowGhost" Data="M485.2999,198.90046 C480.4999,13.300461 483.69992,14.900458 483.69992,14.900458 L286.90001,6.9000002 L259.70001,202.1 L258.10001,528.5 L0.5000061,530.1 L0.5000061,8.5000002 L275.7,16.5 L498.1,21.3 L485.3,270.9 L16.5,269.3 L8.5,539.7 L482.1,530.1 L485.3,286.9 L723.7,269.3 L726.9,152.5 L618.1,146.1 L614.9,102.9 L725.3,101.3 L725.3,2.1000002 L510.9,0.50000002 L482.24476,199.84081 L474.1,256.5 L131.7,253.3 L131.7,197.3 L246.9,203.7 L270.9,30.9 L470.9,32.5 L472.5,190.9" Height="532.2" Canvas.Left="30.1" Stroke="Black" Canvas.Top="29.3" Width="727.4" Stretch="Fill"/>
-        <Path x:Name="PathRedGhost" Data="M267.7,338.10002 C264.5,267.70002 264.50001,269.30003 264.50001,269.30003 L5.3000124,274.10001 L5.3000124,533.30001 L480.5,523.70001 L478.9,269.30001 L256.5,283.70001 L251.7,186.10001 L139.7,194.10001 L123.7,306.10001 L0.50000019,256.50001 L3.7,0.5000061 L485.3,13.3 L496.5,530.1 L734.9,528.5 L725.3,126.9 L614.9,128.5 L726.9,106.1 L718.9,270.9 L477.3,251.7 L499.7,18.1 L733.3,8.5 L720.5,539.7 L254.9,517.3 L266.1,195.7 L269.3,349.3" Height="540.2" Canvas.Left="28.5" Stroke="Black" Canvas.Top="26.1" Width="735.4"/>
-        <Path x:Name="PathWhiteGhost" Data="M496.50001,334.90022 C496.50001,256.50022 501.30003,259.70023 501.30003,259.70023 L722.10001,262.90001 L734.90001,0.50000684 L278.90001,2.1 L278.90001,267.7 L10.1,262.9 L16.500013,0.5 L262.9,5.3 L270.9,539.7 L16.5,531.7 L14.9,280.5 L483.7,267.7 L496.5,10.1 L253.3,29.3 L256.5,206.9 L152.5,197.3 L136.5,246.9 L485.3,280.5 L491.7,522.1 L258.1,523.7 L258.1,285.3 L0.50000038,274.1 L5.3,533.3 L734.9,525.3 L730.1,275.7 L510.9,272.5 L499.7,352.5" Height="540.2" Canvas.Left="18.9" Stroke="Black" Canvas.Top="29.3" Width="735.4"/>
-        <Label x:Name="Life" Content="5" Canvas.Left="56" Canvas.Top="127" Height="39" Width="69"/>
-        <Image x:Name="image" Height="16" Canvas.Left="125" Canvas.Top="-22" Width="36" Source="pack://siteoforigin:,,,/Resources/Pacman.png" Panel.ZIndex="100">
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Pacman.png"/>
-            </Image.OpacityMask>
-        </Image>
-    </Canvas>
+            <Rectangle x:Name="WallP2" Height="37" Margin="125,62" Stroke="Black" Width="86">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallP3"  Height="46" Margin="211,99" Stroke="Black" Width="40">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallP4"  Height="37" Margin="125,145" Stroke="Black" Width="86">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA1"  Height="159" Margin="330,94" Stroke="Black" Width="48">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA2"  Height="37" Margin="378,62" Stroke="Black" Width="52" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA3"  Height="34" Margin="378,148" Stroke="Black"  Width="52">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA4"  Height="154" Margin="430,99" Stroke="Black"  Width="45">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallC1"  Height="109" Margin="549,99" Stroke="Black"  Width="57">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallC2"  Height="37" Margin="584,62" Stroke="Black"  Width="136">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallC3"  Height="45" Margin="584,208" Stroke="Black"  Width="136">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallM1"  Height="183" Margin="56,337" Stroke="Black"  Width="39">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallM2"  Height="54" Margin="95,357" Stroke="Black"  Width="30">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallM3"  Height="62" Margin="125,411" Stroke="Black"  Width="49">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallM4"  Height="54" Margin="171,357" Stroke="Black"  Width="35">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallM5"  Height="183" Margin="206,337" Stroke="Black"  Width="38">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA5"  Height="183" Margin="330,337" Stroke="Black" Width="48">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA6"  Height="34" Margin="378,323" Stroke="Black"  Width="52">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA7"  Height="34" Margin="378,411" Stroke="Black"  Width="52">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallA8"  Height="183" Margin="430,337" Stroke="Black"  Width="45">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallN1"  Height="183" Margin="549,337" Stroke="Black"  Width="45">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallN2"  Height="183" Margin="675,337" Stroke="Black" Width="45">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="WallN3"  Height="24" Margin="540,424" Stroke="Black"  Width="196" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="55.216"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/wall.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Path x:Name="PathVioletGhost" Data="M296.2,225 C160.2,225 159.70001,225 159.70001,225 L158.10001,301.3 33.402548,299.7013 33.300001,299.69999 25.299999,34.100031 286.10001,38.900028 294.10001,558.89995 28.499999,557.29996 33.3,315.69999 513.30002,293.3 513.30002,29.30003 756.50007,26.10003 756.50007,290.1 521.30004,299.7 514.90004,547.69996 758.10006,552.49996 758.10006,298.1 300.50001,291.7 282.90001,544.49997 505.30002,547.69996 510.10002,309.3 C510.10002,309.3 281.30001,288.5 281.30001,288.5 295.70001,222.90001 296.2,225 296.2,225 z" Height="533.8" Canvas.Left="25.3" Stretch="Fill" Stroke="Black" Canvas.Top="26.1" Width="733.8"/>
+            <Path x:Name="PathYellowGhost" Data="M485.2999,198.90046 C480.4999,13.300461 483.69992,14.900458 483.69992,14.900458 L286.90001,6.9000002 L259.70001,202.1 L258.10001,528.5 L0.5000061,530.1 L0.5000061,8.5000002 L275.7,16.5 L498.1,21.3 L485.3,270.9 L16.5,269.3 L8.5,539.7 L482.1,530.1 L485.3,286.9 L723.7,269.3 L726.9,152.5 L618.1,146.1 L614.9,102.9 L725.3,101.3 L725.3,2.1000002 L510.9,0.50000002 L482.24476,199.84081 L474.1,256.5 L131.7,253.3 L131.7,197.3 L246.9,203.7 L270.9,30.9 L470.9,32.5 L472.5,190.9" Height="532.2" Canvas.Left="30.1" Stroke="Black" Canvas.Top="29.3" Width="727.4" Stretch="Fill"/>
+            <Path x:Name="PathRedGhost" Data="M267.7,338.10002 C264.5,267.70002 264.50001,269.30003 264.50001,269.30003 L5.3000124,274.10001 L5.3000124,533.30001 L480.5,523.70001 L478.9,269.30001 L256.5,283.70001 L251.7,186.10001 L139.7,194.10001 L123.7,306.10001 L0.50000019,256.50001 L3.7,0.5000061 L485.3,13.3 L496.5,530.1 L734.9,528.5 L725.3,126.9 L614.9,128.5 L726.9,106.1 L718.9,270.9 L477.3,251.7 L499.7,18.1 L733.3,8.5 L720.5,539.7 L254.9,517.3 L266.1,195.7 L269.3,349.3" Height="540.2" Canvas.Left="28.5" Stroke="Black" Canvas.Top="26.1" Width="735.4"/>
+            <Path x:Name="PathWhiteGhost" Data="M496.50001,334.90022 C496.50001,256.50022 501.30003,259.70023 501.30003,259.70023 L722.10001,262.90001 L734.90001,0.50000684 L278.90001,2.1 L278.90001,267.7 L10.1,262.9 L16.500013,0.5 L262.9,5.3 L270.9,539.7 L16.5,531.7 L14.9,280.5 L483.7,267.7 L496.5,10.1 L253.3,29.3 L256.5,206.9 L152.5,197.3 L136.5,246.9 L485.3,280.5 L491.7,522.1 L258.1,523.7 L258.1,285.3 L0.50000038,274.1 L5.3,533.3 L734.9,525.3 L730.1,275.7 L510.9,272.5 L499.7,352.5" Height="540.2" Canvas.Left="18.9" Stroke="Black" Canvas.Top="29.3" Width="735.4"/>
+        </Canvas>
+        <Label x:Name="PacmanLife" Content="Life" FontSize="40" Foreground="Red" Grid.Column="1" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="80" Height="60"/>
+        <Image x:Name="Life1" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Resources/Pacman.png"/>
+        <Image x:Name="Life2" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="25,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Resources/Pacman.png"/>
+        <Image x:Name="Life3" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="50,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Resources/Pacman.png"/>
+    </Grid>
 </Window>
