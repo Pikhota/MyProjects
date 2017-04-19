@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1465ECAF-6C95-470E-9C96-06AEFC3CB1FE}</ProjectGuid>
+    <ProjectGuid>{C512930C-5348-494C-9E50-EBC51D98FCA6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pacman</RootNamespace>
-    <AssemblyName>Pacman</AssemblyName>
+    <RootNamespace>PCCam</RootNamespace>
+    <AssemblyName>PCCam</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,10 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -87,7 +85,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -97,27 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pacman.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\приведение.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\приведение_желтое.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\приведение_фиолетовое.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\приведение_красное.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wall.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\grass.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

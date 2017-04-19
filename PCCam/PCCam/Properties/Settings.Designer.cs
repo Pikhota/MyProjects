@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Pacman.Properties
+namespace PCCam.Properties
 {
 
 
