@@ -1,56 +1,56 @@
 ﻿using System;
-using System.Threading;
 using System.Windows.Input;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Threading;
+using System.Windows.Media.Imaging;
 
 namespace Pacman
 {
-    public delegate Rect GetRectDelegate(Image img);
-
-    public delegate void SetVisibilityStatusDelegate(Image img);
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private const double Speed = 0;
         private const double Step = 5;
         public Rect Pacman;
-        public TranslateTransform Trans = new TranslateTransform();
+        public Rect Apple;
+        public BitmapImage AppleBitmapImg = new BitmapImage();
+        public TranslateTransform TransPacman = new TranslateTransform();
+        public TranslateTransform TransApple = new TranslateTransform();
         public DoubleAnimation AnimationX = new DoubleAnimation();
         public DoubleAnimation AnimationY = new DoubleAnimation();
         public string SideCollision;
+        public Point StartPosition = new Point(0,0); 
         public int Life = 3;
-        public Thread GameThread { get; private set; }
 
         public MainWindow()
         {
             InitializeComponent();
             KeyDown += Moving;
-            Pacman = new Rect(0, 0, ImgPacman.Width, ImgPacman.Height);
-            ImgPacman.RenderTransform = Trans;
-            //BeginGame();
-            
+            Pacman = new Rect(StartPosition.X, StartPosition.Y, ImgPacman.Width, ImgPacman.Height);
+            ImgPacman.RenderTransform = TransPacman;
         }
 
-        //private void BeginGame()
-        //{
-        //    GameThread = new Thread(x =>
-        //    {
-        //        while(Life != 0)
-        //        {
-        //            IsCollisionGhost();
-        //        }
-        //    });
-        //    GameThread.Start();
-        //}
 
+        
 
+        private bool EatApple()
+        {
+            var flag = false;
+            var apples = new[] {ImgApple1, ImgApple2, ImgApple3, ImgApple4, ImgApple5, ImgApple6, ImgApple7, ImgApple8, ImgApple9, ImgApple10};
+            foreach (var apple in apples)
+            {
+                var rectApple = GetRect(apple);
+                if (Pacman.IntersectsWith(rectApple))
+                {
+                    SetCollapsedImage(apple);
+                    flag = true;
+                }
+            }
+            return flag;
+        }
 
         #region Движение пакмена по событию (нажатие на клавиши - стрелочки)
         private void Moving(object sender, KeyEventArgs e)
@@ -61,14 +61,22 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Right < Win.Width)
                     {
-                        if (IsCollisionGhost())
-                            break;
-                        if (IsCollisionWall() && SideCollision == "right")
+                        if (EatApple())
                         {
-                            while (IsCollisionWall())
+                            PacmanScore.Content = int.Parse(ContentStringFormat)+10;
+                        }
+                        if (IsCollisionGhost())
+                        {
+                            MissLife();
+                            GoToStart();
+                            ImgPacman.RenderTransformOrigin = StartPosition;
+                        }
+                        if (IsCollisionWall(Pacman) && SideCollision == "right")
+                        {
+                            while (IsCollisionWall(Pacman))
                             {
                                 AnimationX = new DoubleAnimation(Pacman.X--, TimeSpan.FromMilliseconds(Speed));
-                                Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                                TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
                                 AnimateY();
                             }
                         }
@@ -76,7 +84,7 @@ namespace Pacman
                         {
                             SideCollision = "right";
                             AnimationX = new DoubleAnimation(Pacman.X + Step, TimeSpan.FromMilliseconds(Speed));
-                            Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                            TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
                             AnimateY();
                         }
                     }
@@ -85,14 +93,23 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Left > 0)
                     {
-                        if (IsCollisionGhost())
-                            break;
-                        if (IsCollisionWall() && SideCollision == "left")
+                        if (EatApple())
                         {
-                            while (IsCollisionWall())
+                            PacmanScore.Content = int.Parse(ContentStringFormat) + 10;
+                        }
+                        if (IsCollisionGhost())
+                        {
+                            MissLife();
+                            GoToStart();
+                            ImgPacman.RenderTransformOrigin = StartPosition;
+                        }
+                            
+                        if (IsCollisionWall(Pacman) && SideCollision == "left")
+                        {
+                            while (IsCollisionWall(Pacman))
                             {
                                 AnimationX = new DoubleAnimation(Pacman.X++, TimeSpan.FromMilliseconds(Speed));
-                                Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                                TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
                                 AnimateY();
                             }
                         }
@@ -101,7 +118,7 @@ namespace Pacman
                         {
                             SideCollision = "left";
                             AnimationX = new DoubleAnimation(Pacman.X - Step, TimeSpan.FromMilliseconds(Speed));
-                            Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                            TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
                             AnimateY();
                         }
                     }
@@ -110,15 +127,24 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Top > 0)
                     {
-                        if (IsCollisionGhost())
-                            break;
-                        if (IsCollisionWall() && SideCollision == "top")
+                        if (EatApple())
                         {
-                            while (IsCollisionWall())
+                            PacmanScore.Content = int.Parse(ContentStringFormat) + 10;
+                        }
+                        if (IsCollisionGhost())
+                        {
+                            GoToStart();
+                            ImgPacman.RenderTransformOrigin = StartPosition;
+                            MissLife();
+                        }
+                            
+                        if (IsCollisionWall(Pacman) && SideCollision == "top")
+                        {
+                            while (IsCollisionWall(Pacman))
                             {
                                 AnimateX();
                                 AnimationY = new DoubleAnimation(Pacman.Y++, TimeSpan.FromMilliseconds(Speed));
-                                Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                                TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
                             }
                         }
 
@@ -127,7 +153,7 @@ namespace Pacman
                             SideCollision = "top";
                             AnimateX();
                             AnimationY = new DoubleAnimation(Pacman.Y - Step, TimeSpan.FromMilliseconds(Speed));
-                            Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                            TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
                         }
 
                     }
@@ -136,14 +162,22 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Bottom < Win.Height - Step * 2)
                     {
-                        if (IsCollisionGhost())
-                            break;
-                        if (IsCollisionWall() && SideCollision == "bottom")
+                        if (EatApple())
                         {
-                            while (IsCollisionWall())
+                            PacmanScore.Content = int.Parse(ContentStringFormat) + 10;
+                        }
+                        if (IsCollisionGhost())
+                        {
+                            GoToStart();
+                            ImgPacman.RenderTransformOrigin = StartPosition;
+                            MissLife();
+                        }
+                        if (IsCollisionWall(Pacman) && SideCollision == "bottom")
+                        {
+                            while (IsCollisionWall(Pacman))
                             {
                                 AnimationY = new DoubleAnimation(Pacman.Y--, TimeSpan.FromMilliseconds(Speed));
-                                Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                                TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
                             }
                         }
 
@@ -152,7 +186,7 @@ namespace Pacman
                             SideCollision = "bottom";
                             AnimateX();
                             AnimationY = new DoubleAnimation(Pacman.Y + Step, TimeSpan.FromMilliseconds(Speed));
-                            Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                            TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
                         }
                     }
                     break;
@@ -161,7 +195,7 @@ namespace Pacman
         #endregion
 
         #region Проверки на столкновение со стеной и привидениями
-        private bool IsCollisionWall()
+        private bool IsCollisionWall(Rect sender)
         {
             var flag = false;
             var walls = new[]{ WallA1, WallA2, WallA3, WallA4,WallA5,WallA6,WallA7,WallA8,WallC1,WallC2,WallC3
@@ -169,7 +203,7 @@ namespace Pacman
             foreach (var wall in walls)
             {
                 var rectWall = GetRect(wall);
-                if (Pacman.IntersectsWith(rectWall))
+                if (sender.IntersectsWith(rectWall))
                 {
                     flag = true;
                 }
@@ -183,49 +217,18 @@ namespace Pacman
             var ghosts = new[] { ImgGhostWhite, ImgGhostRed, ImgGhostYellow, ImgGhostViolet };
             foreach (var ghost in ghosts)
             {
-                //ghost.Dispatcher.Invoke(DispatcherPriority.Normal,new GetRectDelegate(GetRect),ghost);
                 var rectGhost = GetRect(ghost);
                 if (Pacman.IntersectsWith(rectGhost))
                 {
-                    MissLife();
-
                     flag = true;
                 }
             }
             return flag;
         }
         #endregion
-
-        #region Вспомогающие методы (уменьшение дублированого кода и т.п.)
-
-        private void AnimateX()
-        {
-            AnimationX = new DoubleAnimation(Pacman.X, TimeSpan.FromMilliseconds(Speed));
-            Trans.BeginAnimation(TranslateTransform.XProperty, AnimationX);
-        }
-
-        private void AnimateY()
-        {
-            AnimationY = new DoubleAnimation(Pacman.Y, TimeSpan.FromMilliseconds(Speed));
-            Trans.BeginAnimation(TranslateTransform.YProperty, AnimationY);
-        }
-
-        private Rect GetRect(FrameworkElement element)
-        {
-            var transElement = element.TransformToVisual(this);
-            return transElement.TransformBounds(new Rect(new Size(element.ActualWidth, element.ActualHeight)));
-        }
-
-
-        private void CurrentLocation(KeyEventArgs e)
-        {
-            if (Key.Right == e.Key || Key.Left == e.Key)
-                Pacman.X = Trans.X;
-            if (Key.Up == e.Key || Key.Down == e.Key)
-                Pacman.Y = Trans.Y;
-        }
-        #endregion
         
+        #region Потеря жизни
+
         private void MissLife()
         {
             //var moveGhostStopStoryboard = new StopStoryboard {BeginStoryboardName = MoveGhostBeginStoryboard.Name};
@@ -247,18 +250,56 @@ namespace Pacman
                     break;
             }
         }
+        #endregion
 
-        private void SetCollapsedImage(Image img)
+        #region Вспомогающие методы (уменьшение дублированого кода etc.)
+
+        private void AnimateX()
         {
-            if(img.Visibility == Visibility.Visible || img.Visibility == Visibility.Hidden)
+            AnimationX = new DoubleAnimation(Pacman.X, TimeSpan.FromMilliseconds(Speed));
+            TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+        }
+
+        private void AnimateY()
+        {
+            AnimationY = new DoubleAnimation(Pacman.Y, TimeSpan.FromMilliseconds(Speed));
+            TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+        }
+
+        private Rect GetRect(FrameworkElement element)
+        {
+            var transElement = element.TransformToVisual(this);
+            return transElement.TransformBounds(new Rect(new Size(element.ActualWidth, element.ActualHeight)));
+        }
+
+
+        private void CurrentLocation(KeyEventArgs e)
+        {
+            if (Key.Right == e.Key || Key.Left == e.Key)
+                Pacman.X = TransPacman.X;
+            if (Key.Up == e.Key || Key.Down == e.Key)
+                Pacman.Y = TransPacman.Y;
+        }
+
+        private void GoToStart()
+        {
+            Pacman.X = 0;
+            Pacman.Y = 0;
+        }
+
+        private static void SetCollapsedImage(UIElement img)
+        {
+            if (img.Visibility == Visibility.Visible || img.Visibility == Visibility.Hidden)
                 img.Visibility = Visibility.Collapsed;
         }
 
-        private void SetVisibleImage(Image img)
+        private static void SetVisibleImage(UIElement img)
         {
-            if(img.Visibility == Visibility.Hidden)
+            if (img.Visibility == Visibility.Hidden)
                 img.Visibility = Visibility.Visible;
         }
+        #endregion
+        
     }
 }
 

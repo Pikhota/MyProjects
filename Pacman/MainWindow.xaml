@@ -84,7 +84,6 @@
             </Canvas.Background>
             <GroupBox x:Name="Group"/>
 
-
             <Image x:Name="ImgPacman" Source="pack://siteoforigin:,,,/Images/Pacman.png" Height="30" Width="30" RenderTransformOrigin="0.5,0.5" >
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/Pacman.png"/>
@@ -266,6 +265,17 @@
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
+            <Image x:Name="ImgApple1" Source="pack://siteoforigin:,,,/Images/apple.png" Width="30" Height="30" Canvas.Left="383" Canvas.Top="200" />
+            <Image x:Name="ImgApple2" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="383" Canvas.Top="467"/>
+            <Image x:Name="ImgApple3" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="171" Canvas.Top="415"/>
+            <Image x:Name="ImgApple4" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="130" Canvas.Top="200"/>
+            <Image x:Name="ImgApple5" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="611" Canvas.Top="115" />
+            <Image x:Name="ImgApple6" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="383" Canvas.Top="288" />
+            <Image x:Name="ImgApple7" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="734" Canvas.Top="540"/>
+            <Image x:Name="ImgApple8" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="435" Canvas.Top="62"/>
+            <Image x:Name="ImgApple9" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="136" Canvas.Top="367"/>
+            <Image x:Name="ImgApple10" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="675" Canvas.Top="302"/>
+
             <Path x:Name="PathVioletGhost" Data="M296.2,225 C160.2,225 159.70001,225 159.70001,225 L158.10001,301.3 33.402548,299.7013 33.300001,299.69999 25.299999,34.100031 286.10001,38.900028 294.10001,558.89995 28.499999,557.29996 33.3,315.69999 513.30002,293.3 513.30002,29.30003 756.50007,26.10003 756.50007,290.1 521.30004,299.7 514.90004,547.69996 758.10006,552.49996 758.10006,298.1 300.50001,291.7 282.90001,544.49997 505.30002,547.69996 510.10002,309.3 C510.10002,309.3 281.30001,288.5 281.30001,288.5 295.70001,222.90001 296.2,225 296.2,225 z" Height="533.8" Canvas.Left="25.3" Stretch="Fill" Stroke="Black" Canvas.Top="26.1" Width="733.8" Visibility="Hidden"/>
             <Path x:Name="PathYellowGhost" Data="M485.2999,198.90046 C480.4999,13.300461 483.69992,14.900458 483.69992,14.900458 L286.90001,6.9000002 L259.70001,202.1 L258.10001,528.5 L0.5000061,530.1 L0.5000061,8.5000002 L275.7,16.5 L498.1,21.3 L485.3,270.9 L16.5,269.3 L8.5,539.7 L482.1,530.1 L485.3,286.9 L723.7,269.3 L726.9,152.5 L618.1,146.1 L614.9,102.9 L725.3,101.3 L725.3,2.1000002 L510.9,0.50000002 L482.24476,199.84081 L474.1,256.5 L131.7,253.3 L131.7,197.3 L246.9,203.7 L270.9,30.9 L470.9,32.5 L472.5,190.9" Height="532.2" Canvas.Left="30.1" Stroke="Black" Canvas.Top="29.3" Width="727.4" Stretch="Fill" Visibility="Hidden"/>
             <Path x:Name="PathRedGhost" Data="M267.7,338.10002 C264.5,267.70002 264.50001,269.30003 264.50001,269.30003 L5.3000124,274.10001 L5.3000124,533.30001 L480.5,523.70001 L478.9,269.30001 L256.5,283.70001 L251.7,186.10001 L139.7,194.10001 L123.7,306.10001 L0.50000019,256.50001 L3.7,0.5000061 L485.3,13.3 L496.5,530.1 L734.9,528.5 L725.3,126.9 L614.9,128.5 L726.9,106.1 L718.9,270.9 L477.3,251.7 L499.7,18.1 L733.3,8.5 L720.5,539.7 L254.9,517.3 L266.1,195.7 L269.3,349.3" Height="540.2" Canvas.Left="28.5" Stroke="Black" Canvas.Top="26.1" Width="735.4" Visibility="Hidden"/>
