@@ -6,7 +6,7 @@
         x:Class="Pacman.MainWindow"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="Pacman" Height="625" Width="900" Icon="pack://siteoforigin:,,,/Images/Pacman.png" Topmost="True">
+        Title="Pacman" Height="625" Width="900" Icon="Images/Pacman.png" Topmost="True">
     <Window.Resources>
         <Storyboard x:Key="MoveGhost" RepeatBehavior="Forever" AutoReverse="True">
             <DoubleAnimationUsingPath Duration="0:1:0" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ImgGhostViolet">
@@ -72,7 +72,7 @@
     <Grid Width="900" Height="585">
 
         <Grid.Background>
-            <ImageBrush ImageSource ="pack://siteoforigin:,,,/Images/wall.jpg" />
+            <ImageBrush ImageSource ="pack://application:,,,/Images/wall.jpg" />
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -84,13 +84,13 @@
             </Canvas.Background>
             <GroupBox x:Name="Group"/>
 
-            <Image x:Name="ImgPacman" Source="pack://siteoforigin:,,,/Images/Pacman.png" Height="30" Width="30" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="ImgPacman" Source="pack://application:,,,/Images/Pacman.png" Height="30" Width="30" RenderTransformOrigin="0.5,0.5" >
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/Pacman.png"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/Pacman.png"/>
                 </Image.OpacityMask>
             </Image>
 
-            <Image x:Name="ImgGhostWhite" Source="pack://siteoforigin:,,,/Images/ghost_white.png" Height="60" Width="60" Margin="487,337" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="ImgGhostWhite" Source="pack://application:,,,/Images/ghost_white.png" Height="60" Width="60" Margin="487,337" RenderTransformOrigin="0.5,0.5" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -100,10 +100,10 @@
                     </TransformGroup>
                 </Image.RenderTransform>
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/ghost_white.png"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/ghost_white.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image x:Name="ImgGhostRed" Source="pack://siteoforigin:,,,/Images/ghost_red.png" Height="60" Width="60" Margin="265,337" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="ImgGhostRed" Source="pack://application:,,,/Images/ghost_red.png" Height="60" Width="60" Margin="265,337" RenderTransformOrigin="0.5,0.5" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -113,10 +113,10 @@
                     </TransformGroup>
                 </Image.RenderTransform>
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/ghost_red.png"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/ghost_red.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image x:Name="ImgGhostYellow" Source="pack://siteoforigin:,,,/Images/ghost_yellow.png" Height="60" Width="60" Margin="480,193" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="ImgGhostYellow" Source="pack://application:,,,/Images/ghost_yellow.png" Height="60" Width="60" Margin="480,193" RenderTransformOrigin="0.5,0.5" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -126,10 +126,10 @@
                     </TransformGroup>
                 </Image.RenderTransform>
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/ghost_yellow.png"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/ghost_yellow.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Image x:Name="ImgGhostViolet" Source="pack://siteoforigin:,,,/Images/ghost_violet.png" Height="60" Width="60" Margin="265,200" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="ImgGhostViolet" Source="pack://application:,,,/Images/ghost_violet.png" Height="60" Width="60" Margin="265,200" RenderTransformOrigin="0.5,0.5" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -139,117 +139,117 @@
                     </TransformGroup>
                 </Image.RenderTransform>
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/ghost_violet.png" />
+                    <ImageBrush ImageSource="pack://application:,,,/Images/ghost_violet.png" />
                 </Image.OpacityMask>
             </Image>
             <Rectangle  x:Name="WallP1" Height="196" Margin="56,64" Stroke="Black"  Width="69">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallP2" Height="37" Stroke="Black" Width="86" Canvas.Left="125" Canvas.Top="64">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallP3"  Height="46" Margin="211,99" Stroke="Black" Width="40">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallP4"  Height="37" Margin="125,145" Stroke="Black" Width="86">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA1"  Height="159" Margin="330,94" Stroke="Black" Width="48">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA2"  Height="37" Margin="378,62" Stroke="Black" Width="52" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA3"  Height="34" Margin="378,148" Stroke="Black"  Width="52">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA4"  Height="154" Margin="430,99" Stroke="Black"  Width="45">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallC1"  Height="109" Margin="549,99" Stroke="Black"  Width="57">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallC2"  Height="37" Margin="584,62" Stroke="Black"  Width="136">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallC3"  Height="45" Margin="584,208" Stroke="Black"  Width="136">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallM1"  Height="183" Margin="56,337" Stroke="Black"  Width="39">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallM2"  Height="54" Margin="95,357" Stroke="Black"  Width="30">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallM3"  Height="62" Margin="125,411" Stroke="Black"  Width="49">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallM4"  Height="54" Margin="171,357" Stroke="Black"  Width="35">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallM5"  Height="183" Margin="206,337" Stroke="Black"  Width="38">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA5"  Height="183" Margin="330,337" Stroke="Black" Width="48">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA6"  Height="34" Margin="378,323" Stroke="Black"  Width="52">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA7"  Height="34" Margin="378,411" Stroke="Black"  Width="52">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallA8"  Height="183" Margin="430,337" Stroke="Black"  Width="45">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallN1"  Height="183" Margin="549,337" Stroke="Black"  Width="45">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallN2"  Height="183" Margin="675,337" Stroke="Black" Width="45">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="WallN3"  Height="24" Margin="540,424" Stroke="Black"  Width="196" RenderTransformOrigin="0.5,0.5">
@@ -262,10 +262,10 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/wall.jpg"/>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/wall.jpg"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Image x:Name="ImgApple1" Source="pack://siteoforigin:,,,/Images/apple.png" Width="30" Height="30" Canvas.Left="383" Canvas.Top="200" />
+            <Image x:Name="ImgApple1" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="383" Canvas.Top="200" />
             <Image x:Name="ImgApple2" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="383" Canvas.Top="467"/>
             <Image x:Name="ImgApple3" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="171" Canvas.Top="415"/>
             <Image x:Name="ImgApple4" Source="Images/apple.png" Width="30" Height="30" Canvas.Left="130" Canvas.Top="200"/>
@@ -287,6 +287,6 @@
         <Image x:Name="Life1" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Images/Pacman.png"/>
         <Image x:Name="Life2" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="25,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Images/Pacman.png"/>
         <Image x:Name="Life3" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="50,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Images/Pacman.png"/>
-        <Image x:Name="GameOver" Source="pack://siteoforigin:,,,/Images/Game_Over.png" Grid.Column="0" Visibility="Hidden"/>
+        <Image x:Name="GameOver" Source="pack://application:,,,/Images/Game_Over.png" Grid.Column="0" Visibility="Hidden"/>
     </Grid>
 </Window>

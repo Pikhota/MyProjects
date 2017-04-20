@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 
 namespace Pacman
 {
@@ -15,15 +16,14 @@ namespace Pacman
         private const double Speed = 0;
         private const double Step = 5;
         public Rect Pacman;
-        public Rect Apple;
-        public BitmapImage AppleBitmapImg = new BitmapImage();
         public TranslateTransform TransPacman = new TranslateTransform();
-        public TranslateTransform TransApple = new TranslateTransform();
         public DoubleAnimation AnimationX = new DoubleAnimation();
         public DoubleAnimation AnimationY = new DoubleAnimation();
         public string SideCollision;
         public Point StartPosition = new Point(0,0); 
         public int Life = 3;
+        public int CountApple = 0;
+        public List<Image> Apples;
 
         public MainWindow()
         {
@@ -31,21 +31,22 @@ namespace Pacman
             KeyDown += Moving;
             Pacman = new Rect(StartPosition.X, StartPosition.Y, ImgPacman.Width, ImgPacman.Height);
             ImgPacman.RenderTransform = TransPacman;
+            Apples = new List<Image>{ ImgApple1, ImgApple2, ImgApple3, ImgApple4, ImgApple5, ImgApple6, ImgApple7, ImgApple8, ImgApple9, ImgApple10 };
         }
 
 
-        
 
-        private bool EatApple()
+
+        private bool IsEatApple()
         {
             var flag = false;
-            var apples = new[] {ImgApple1, ImgApple2, ImgApple3, ImgApple4, ImgApple5, ImgApple6, ImgApple7, ImgApple8, ImgApple9, ImgApple10};
-            foreach (var apple in apples)
+            for (var apple = 0; apple < Apples.Count; apple++ )
             {
-                var rectApple = GetRect(apple);
+                var rectApple = GetRect(Apples[apple]);
                 if (Pacman.IntersectsWith(rectApple))
                 {
-                    SetCollapsedImage(apple);
+                    SetCollapsedImage(Apples[apple]);
+                    Apples.RemoveAt(apple);
                     flag = true;
                 }
             }
@@ -61,9 +62,9 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Right < Win.Width)
                     {
-                        if (EatApple())
+                        if (IsEatApple())
                         {
-                            PacmanScore.Content = int.Parse(ContentStringFormat)+10;
+                            PacmanScore.Content = ++CountApple;
                         }
                         if (IsCollisionGhost())
                         {
@@ -93,9 +94,9 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Left > 0)
                     {
-                        if (EatApple())
+                        if (IsEatApple())
                         {
-                            PacmanScore.Content = int.Parse(ContentStringFormat) + 10;
+                            PacmanScore.Content = ++CountApple;
                         }
                         if (IsCollisionGhost())
                         {
@@ -127,9 +128,9 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Top > 0)
                     {
-                        if (EatApple())
+                        if (IsEatApple())
                         {
-                            PacmanScore.Content = int.Parse(ContentStringFormat) + 10;
+                            PacmanScore.Content = ++CountApple;
                         }
                         if (IsCollisionGhost())
                         {
@@ -162,9 +163,9 @@ namespace Pacman
                     CurrentLocation(e);
                     if (Pacman.Bottom < Win.Height - Step * 2)
                     {
-                        if (EatApple())
+                        if (IsEatApple())
                         {
-                            PacmanScore.Content = int.Parse(ContentStringFormat) + 10;
+                            PacmanScore.Content = ++CountApple;
                         }
                         if (IsCollisionGhost())
                         {
@@ -231,8 +232,6 @@ namespace Pacman
 
         private void MissLife()
         {
-            //var moveGhostStopStoryboard = new StopStoryboard {BeginStoryboardName = MoveGhostBeginStoryboard.Name};
-            //moveGhostStopStoryboard.ClearValue(DefaultStyleKeyProperty);
             switch (Life)
             {
                 case 1:
