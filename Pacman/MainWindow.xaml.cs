@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 namespace Pacman
 {
+    public delegate void CollisionDelegate();
+
+    public delegate void MoveDelegate();
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -24,169 +29,92 @@ namespace Pacman
         public int Life = 3;
         public int CountApple = 0;
         public List<Image> Apples;
+        private Storyboard _storyboardGhost;
+        public event CollisionDelegate CollisionEvent;
+        //public Thread th;
 
         public MainWindow()
         {
             InitializeComponent();
             KeyDown += Moving;
+            CollisionEvent += IsCollisionGhost;
+            CollisionEvent += IsEatApple;
             Pacman = new Rect(StartPosition.X, StartPosition.Y, ImgPacman.Width, ImgPacman.Height);
             ImgPacman.RenderTransform = TransPacman;
             Apples = new List<Image>{ ImgApple1, ImgApple2, ImgApple3, ImgApple4, ImgApple5, ImgApple6, ImgApple7, ImgApple8, ImgApple9, ImgApple10 };
+            GhostStartMove();
         }
 
 
-
-
-        private bool IsEatApple()
-        {
-            var flag = false;
-            for (var apple = 0; apple < Apples.Count; apple++ )
-            {
-                var rectApple = GetRect(Apples[apple]);
-                if (Pacman.IntersectsWith(rectApple))
-                {
-                    SetCollapsedImage(Apples[apple]);
-                    Apples.RemoveAt(apple);
-                    flag = true;
-                }
-            }
-            return flag;
-        }
 
         #region Движение пакмена по событию (нажатие на клавиши - стрелочки)
+
         private void Moving(object sender, KeyEventArgs e)
         {
+            CurrentLocation(e);
+            OnCollisionEvent();
             switch (e.Key)
             {
                 case Key.Right:
-                    CurrentLocation(e);
+                    SideCollision = "right";
                     if (Pacman.Right < Win.Width)
                     {
-                        if (IsEatApple())
+                        AnimationX = new DoubleAnimation(Pacman.X + Step, TimeSpan.FromMilliseconds(Speed));
+                        TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                        AnimateY();
+                        while (IsCollisionWall() && SideCollision == "right")
                         {
-                            PacmanScore.Content = ++CountApple;
-                        }
-                        if (IsCollisionGhost())
-                        {
-                            MissLife();
-                            GoToStart();
-                            ImgPacman.RenderTransformOrigin = StartPosition;
-                        }
-                        if (IsCollisionWall(Pacman) && SideCollision == "right")
-                        {
-                            while (IsCollisionWall(Pacman))
-                            {
-                                AnimationX = new DoubleAnimation(Pacman.X--, TimeSpan.FromMilliseconds(Speed));
-                                TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
-                                AnimateY();
-                            }
-                        }
-                        else
-                        {
-                            SideCollision = "right";
-                            AnimationX = new DoubleAnimation(Pacman.X + Step, TimeSpan.FromMilliseconds(Speed));
+                            AnimationX = new DoubleAnimation(Pacman.X--, TimeSpan.FromMilliseconds(Speed));
                             TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
                             AnimateY();
                         }
                     }
                     break;
                 case Key.Left:
-                    CurrentLocation(e);
+                    SideCollision = "left";
                     if (Pacman.Left > 0)
                     {
-                        if (IsEatApple())
-                        {
-                            PacmanScore.Content = ++CountApple;
-                        }
-                        if (IsCollisionGhost())
-                        {
-                            MissLife();
-                            GoToStart();
-                            ImgPacman.RenderTransformOrigin = StartPosition;
-                        }
-                            
-                        if (IsCollisionWall(Pacman) && SideCollision == "left")
-                        {
-                            while (IsCollisionWall(Pacman))
-                            {
-                                AnimationX = new DoubleAnimation(Pacman.X++, TimeSpan.FromMilliseconds(Speed));
-                                TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
-                                AnimateY();
-                            }
-                        }
 
-                        else
+                        AnimationX = new DoubleAnimation(Pacman.X - Step, TimeSpan.FromMilliseconds(Speed));
+                        TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                        AnimateY();
+
+                        while (IsCollisionWall() && SideCollision == "left")
                         {
-                            SideCollision = "left";
-                            AnimationX = new DoubleAnimation(Pacman.X - Step, TimeSpan.FromMilliseconds(Speed));
+                            AnimationX = new DoubleAnimation(Pacman.X++, TimeSpan.FromMilliseconds(Speed));
                             TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
                             AnimateY();
                         }
                     }
                     break;
                 case Key.Up:
-                    CurrentLocation(e);
+                    SideCollision = "top";
                     if (Pacman.Top > 0)
                     {
-                        if (IsEatApple())
-                        {
-                            PacmanScore.Content = ++CountApple;
-                        }
-                        if (IsCollisionGhost())
-                        {
-                            GoToStart();
-                            ImgPacman.RenderTransformOrigin = StartPosition;
-                            MissLife();
-                        }
-                            
-                        if (IsCollisionWall(Pacman) && SideCollision == "top")
-                        {
-                            while (IsCollisionWall(Pacman))
-                            {
-                                AnimateX();
-                                AnimationY = new DoubleAnimation(Pacman.Y++, TimeSpan.FromMilliseconds(Speed));
-                                TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
-                            }
-                        }
+                        AnimateX();
+                        AnimationY = new DoubleAnimation(Pacman.Y - Step, TimeSpan.FromMilliseconds(Speed));
+                        TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
 
-                        else
+                        while (IsCollisionWall() && SideCollision == "top")
                         {
-                            SideCollision = "top";
                             AnimateX();
-                            AnimationY = new DoubleAnimation(Pacman.Y - Step, TimeSpan.FromMilliseconds(Speed));
+                            AnimationY = new DoubleAnimation(Pacman.Y++, TimeSpan.FromMilliseconds(Speed));
                             TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
                         }
+
 
                     }
                     break;
                 case Key.Down:
-                    CurrentLocation(e);
+                    SideCollision = "bottom";
                     if (Pacman.Bottom < Win.Height - Step * 2)
                     {
-                        if (IsEatApple())
+                        AnimateX();
+                        AnimationY = new DoubleAnimation(Pacman.Y + Step, TimeSpan.FromMilliseconds(Speed));
+                        TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
+                        while (IsCollisionWall() && SideCollision == "bottom")
                         {
-                            PacmanScore.Content = ++CountApple;
-                        }
-                        if (IsCollisionGhost())
-                        {
-                            GoToStart();
-                            ImgPacman.RenderTransformOrigin = StartPosition;
-                            MissLife();
-                        }
-                        if (IsCollisionWall(Pacman) && SideCollision == "bottom")
-                        {
-                            while (IsCollisionWall(Pacman))
-                            {
-                                AnimationY = new DoubleAnimation(Pacman.Y--, TimeSpan.FromMilliseconds(Speed));
-                                TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
-                            }
-                        }
-
-                        else
-                        {
-                            SideCollision = "bottom";
-                            AnimateX();
-                            AnimationY = new DoubleAnimation(Pacman.Y + Step, TimeSpan.FromMilliseconds(Speed));
+                            AnimationY = new DoubleAnimation(Pacman.Y--, TimeSpan.FromMilliseconds(Speed));
                             TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
                         }
                     }
@@ -195,8 +123,25 @@ namespace Pacman
         }
         #endregion
 
-        #region Проверки на столкновение со стеной и привидениями
-        private bool IsCollisionWall(Rect sender)
+        #region Проверки на столкновение со стеной, привидениями и на съедение яблока
+        //private double CurLoc()
+        //{
+        //    var result = 0.0;
+        //    var walls = new[]{ WallA1, WallA2, WallA3, WallA4,WallA5,WallA6,WallA7,WallA8,WallC1,WallC2,WallC3
+        //    , WallM1,WallM2,WallM3,WallM4,WallM5,WallN1,WallN2,WallN3,WallP1,WallP2,WallP3,WallP4};
+        //    foreach (var wall in walls)
+        //    {
+        //        var rectWall = GetRect(wall);
+        //        if (Pacman.IntersectsWith(rectWall))
+        //        {
+        //            var rect = Rect.Intersect(Pacman, rectWall);
+        //            result = rectWall.Width - rect.Width;
+        //        }
+        //    }
+        //    return result;
+        //}
+
+        private bool IsCollisionWall()
         {
             var flag = false;
             var walls = new[]{ WallA1, WallA2, WallA3, WallA4,WallA5,WallA6,WallA7,WallA8,WallC1,WallC2,WallC3
@@ -204,7 +149,7 @@ namespace Pacman
             foreach (var wall in walls)
             {
                 var rectWall = GetRect(wall);
-                if (sender.IntersectsWith(rectWall))
+                if (Pacman.IntersectsWith(rectWall))
                 {
                     flag = true;
                 }
@@ -212,22 +157,40 @@ namespace Pacman
             return flag;
         }
 
-        private bool IsCollisionGhost()
+        private void IsCollisionGhost()
         {
-            var flag = false;
             var ghosts = new[] { ImgGhostWhite, ImgGhostRed, ImgGhostYellow, ImgGhostViolet };
             foreach (var ghost in ghosts)
             {
                 var rectGhost = GetRect(ghost);
-                if (Pacman.IntersectsWith(rectGhost))
+                if (!Pacman.IntersectsWith(rectGhost)) continue;
+                GoToStart();
+                MissLife();
+            }
+        }
+
+        private void IsEatApple()
+        {
+            var flag = false;
+            for (var apple = 0; apple < Apples.Count; apple++)
+            {
+                var rectApple = GetRect(Apples[apple]);
+                if (Pacman.IntersectsWith(rectApple))
                 {
-                    flag = true;
+                    SetCollapsedImage(Apples[apple]);
+                    Apples.RemoveAt(apple);
+                    Victory.Visibility = Apples.Count == 0 ? Visibility.Visible : Visibility.Hidden;
+                    PacmanScore.Content = ++CountApple;
+                    
                 }
             }
-            return flag;
+            if (Victory.IsVisible)
+            {
+                GhostStop();
+            }
         }
         #endregion
-        
+
         #region Потеря жизни
 
         private void MissLife()
@@ -298,7 +261,28 @@ namespace Pacman
                 img.Visibility = Visibility.Visible;
         }
         #endregion
+
+        #region Старт движение привидений
+        private void GhostStartMove()
+        {
+            _storyboardGhost = FindResource("MoveGhost") as Storyboard;
+            _storyboardGhost?.Begin();
+        }
+        #endregion
+
         
+
+        #region Остановка движения привидений
+        private void GhostStop()
+        {
+            _storyboardGhost.Pause();
+        }
+        #endregion
+
+        public virtual void OnCollisionEvent()
+        {
+            CollisionEvent?.Invoke();
+        }
     }
 }
 

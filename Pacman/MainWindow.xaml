@@ -63,11 +63,6 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard x:Name="MoveGhostBeginStoryboard" Storyboard="{StaticResource MoveGhost}"/>
-        </EventTrigger>
-    </Window.Triggers>
 
     <Grid Width="900" Height="585">
 
@@ -284,9 +279,10 @@
         <Label x:Name="PacmanLife" Content="Life" FontSize="40" Foreground="Red" Grid.Column="1" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="80" Height="60"/>
         <Label x:Name="LabelScore" Content="Score" FontSize="26" Foreground="Red" Grid.Column="1" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="80" Height="60"/>
         <Label x:Name="PacmanScore" Content="0" FontSize="26" Foreground="Red" Grid.Column="1" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Width="80" Height="60"/>
-        <Image x:Name="Life1" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Images/Pacman.png"/>
-        <Image x:Name="Life2" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="25,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Images/Pacman.png"/>
-        <Image x:Name="Life3" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="50,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://siteoforigin:,,,/Images/Pacman.png"/>
+        <Image x:Name="Life1" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://application:,,,/Images/Pacman.png"/>
+        <Image x:Name="Life2" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="25,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://application:,,,/Images/Pacman.png"/>
+        <Image x:Name="Life3" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="50,92,0,0" VerticalAlignment="Top" Width="25" Source="pack://application:,,,/Images/Pacman.png"/>
         <Image x:Name="GameOver" Source="pack://application:,,,/Images/Game_Over.png" Grid.Column="0" Visibility="Hidden"/>
+        <Image x:Name="Victory" Source="pack://application:,,,/Images/victory.png" Grid.Column="0"  Visibility="Hidden"/>   
     </Grid>
 </Window>
