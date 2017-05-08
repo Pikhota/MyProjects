@@ -1,0 +1,116 @@
+﻿<Window x:Class="MetroNavigation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetroNavigation"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Metro navigation"  Width="1100" Height="800">
+    <Grid Width="1040" Height="780">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/kiev-metro.png"/>
+        </Grid.Background>
+
+        <Ellipse x:Name="Academmistechko" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="29,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Zhytomyrska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="79,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Sviatoshyn" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="129,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Nyvky" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="179,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Beresteiska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="229,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Shuliavska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="279,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="PolitekhnichnyiInstytut" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="335,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Vokzalna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="395,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Universytet" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="445,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Teatralna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="529,370,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Khreshchatyk" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Arsenalna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="709,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Dnepr" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="779,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Hidropark" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="829,289,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Livoberezhna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="859,259,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Darnytsia" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="889,229,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Chernihivska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="929,189,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Lisova" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="980,139,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Rectangle x:Name="PathAcademmistechkoZhytomyrska" Fill="Red" HorizontalAlignment="Left" Height="10" Margin="38,405,0,0" Stroke="Black" VerticalAlignment="Top" Width="52" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="PathZhytomyrskaSviatoshyn" Fill="Red" HorizontalAlignment="Left" Height="10" Margin="83,405,0,0" Stroke="Black" VerticalAlignment="Top" Width="59" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="PathSviatoshynNyvky" Fill="Red" HorizontalAlignment="Left" Height="10" Margin="134,405,0,0" Stroke="Black" VerticalAlignment="Top" Width="56" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="PathNyvkyBeresteiska" Fill="Red" HorizontalAlignment="Left" Height="10" Margin="184,405,0,0" Stroke="Black" VerticalAlignment="Top" Width="56" Panel.ZIndex="-1" RenderTransformOrigin="0.635,1.503" />
+        <Rectangle x:Name="PathBeresteiskaShuliavska" Fill="Red" HorizontalAlignment="Left" Height="10" Margin="233,405,0,0" Stroke="Black" VerticalAlignment="Top" Width="60" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="PathShuliavskaPolitekhnichnyiInstytut" Fill="Red" HorizontalAlignment="Left" Height="10" Margin="283,405,0,0" Stroke="Black" VerticalAlignment="Top" Width="60" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="PathPolitekhnichnyiInstytutVokzalna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="64" Margin="343,405,0,0" Panel.ZIndex="-1"/>
+        <Rectangle x:Name="PathVokzalnaUniversytet" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="55" Margin="400,405,0,0" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="PathUniversytetTeatralna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="64" Margin="451,405,0,0" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
+        <Rectangle x:Name="PathCrossRoadTeatralnaUniversytet"  Fill="Red" HorizontalAlignment="Right" Height="10" Stroke="Black"   VerticalAlignment="Top" Width="44" Margin="0,400,535,0" RenderTransformOrigin="1.035,0.979" Panel.ZIndex="-1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="135.453"/>
+                    <TranslateTransform X="1" Y="-2"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="PathCrossRoadTeatralnaKhreshchatyk"  Fill="Red" HorizontalAlignment="Right" Height="10" Stroke="Black" VerticalAlignment="Top" Width="51" Margin="0,375,456,0" RenderTransformOrigin="0.1,0.513" Panel.ZIndex="-1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-47.504"/>
+                    <TranslateTransform X="2.653" Y="1.5"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="PathCrossRoadKhreshchatykTeatralna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="60" Margin="570,345,0,0" Panel.ZIndex="-1"/>
+        <Rectangle x:Name="PathCrossRoadKhreshchatykArsenalna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="90" Margin="630,345,0,0" Panel.ZIndex="-1"/>
+        <Rectangle x:Name="PathArsenalnaDnipro" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="72" Margin="720,345,0,0" Panel.ZIndex="-1"/>
+        <Rectangle x:Name="PathDniproHidropark" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="72" Margin="779,320,0,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-46.605"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="PathHidroparkLivoberezhna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="47" Margin="833,279,0,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-45.493"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="PathLivoberezhnaDarnytsia" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="40" Margin="868,247,0,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-45.493"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="PathDarnytsiaChernihivska" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="55" Margin="894,213,0,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-45.493"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="PathChernihivskaLisova" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="71" Margin="929,170,0,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-44.429"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</Window>
