@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Threading;
+using System.Windows.Shapes;
 
 namespace Pacman
 {
-    public delegate void CollisionDelegate();
-
-    public delegate void MoveDelegate();
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -28,20 +24,23 @@ namespace Pacman
         public Point StartPosition = new Point(0,0); 
         public int Life = 3;
         public int CountApple = 0;
+        public Rectangle[] Walls;
         public List<Image> Apples;
         private Storyboard _storyboardGhost;
-        public event CollisionDelegate CollisionEvent;
-        //public Thread th;
 
         public MainWindow()
         {
             InitializeComponent();
             KeyDown += Moving;
-            CollisionEvent += IsCollisionGhost;
-            CollisionEvent += IsEatApple;
+
             Pacman = new Rect(StartPosition.X, StartPosition.Y, ImgPacman.Width, ImgPacman.Height);
             ImgPacman.RenderTransform = TransPacman;
-            Apples = new List<Image>{ ImgApple1, ImgApple2, ImgApple3, ImgApple4, ImgApple5, ImgApple6, ImgApple7, ImgApple8, ImgApple9, ImgApple10 };
+
+            Walls = new[]{ WallA1, WallA2, WallA3, WallA4,WallA5,WallA6,WallA7,WallA8,WallC1,WallC2,WallC3
+            , WallM1,WallM2,WallM3,WallM4,WallM5,WallN1,WallN2,WallN3,WallP1,WallP2,WallP3,WallP4};
+
+            Apples = new List<Image>{ ImgApple1, ImgApple2, ImgApple3, ImgApple4, ImgApple5, ImgApple6, ImgApple7,
+                ImgApple8, ImgApple9, ImgApple10 };
             GhostStartMove();
         }
 
@@ -51,23 +50,26 @@ namespace Pacman
 
         private void Moving(object sender, KeyEventArgs e)
         {
+            IsCollisionGhost();
+            IsEatApple();
             CurrentLocation(e);
-            OnCollisionEvent();
+
             switch (e.Key)
             {
                 case Key.Right:
                     SideCollision = "right";
-                    if (Pacman.Right < Win.Width)
+                    while (Pacman.Right < Win.ActualWidth)
                     {
-                        AnimationX = new DoubleAnimation(Pacman.X + Step, TimeSpan.FromMilliseconds(Speed));
+
+                        AnimationX = new DoubleAnimation(Pacman.X++, TimeSpan.FromSeconds(10));
                         TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
                         AnimateY();
-                        while (IsCollisionWall() && SideCollision == "right")
-                        {
-                            AnimationX = new DoubleAnimation(Pacman.X--, TimeSpan.FromMilliseconds(Speed));
-                            TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
-                            AnimateY();
-                        }
+                        //while (IsCollisionWall())
+                        //{
+                        //    AnimationX = new DoubleAnimation(Pacman.X--, TimeSpan.FromMilliseconds(Speed));
+                        //    TransPacman.BeginAnimation(TranslateTransform.XProperty, AnimationX);
+                        //    AnimateY();
+                        //}
                     }
                     break;
                 case Key.Left:
@@ -94,7 +96,6 @@ namespace Pacman
                         AnimateX();
                         AnimationY = new DoubleAnimation(Pacman.Y - Step, TimeSpan.FromMilliseconds(Speed));
                         TransPacman.BeginAnimation(TranslateTransform.YProperty, AnimationY);
-
                         while (IsCollisionWall() && SideCollision == "top")
                         {
                             AnimateX();
@@ -107,7 +108,7 @@ namespace Pacman
                     break;
                 case Key.Down:
                     SideCollision = "bottom";
-                    if (Pacman.Bottom < Win.Height - Step * 2)
+                    if (Pacman.Bottom < Win.ActualHeight - Step * 2)
                     {
                         AnimateX();
                         AnimationY = new DoubleAnimation(Pacman.Y + Step, TimeSpan.FromMilliseconds(Speed));
@@ -124,29 +125,10 @@ namespace Pacman
         #endregion
 
         #region Проверки на столкновение со стеной, привидениями и на съедение яблока
-        //private double CurLoc()
-        //{
-        //    var result = 0.0;
-        //    var walls = new[]{ WallA1, WallA2, WallA3, WallA4,WallA5,WallA6,WallA7,WallA8,WallC1,WallC2,WallC3
-        //    , WallM1,WallM2,WallM3,WallM4,WallM5,WallN1,WallN2,WallN3,WallP1,WallP2,WallP3,WallP4};
-        //    foreach (var wall in walls)
-        //    {
-        //        var rectWall = GetRect(wall);
-        //        if (Pacman.IntersectsWith(rectWall))
-        //        {
-        //            var rect = Rect.Intersect(Pacman, rectWall);
-        //            result = rectWall.Width - rect.Width;
-        //        }
-        //    }
-        //    return result;
-        //}
-
         private bool IsCollisionWall()
         {
             var flag = false;
-            var walls = new[]{ WallA1, WallA2, WallA3, WallA4,WallA5,WallA6,WallA7,WallA8,WallC1,WallC2,WallC3
-            , WallM1,WallM2,WallM3,WallM4,WallM5,WallN1,WallN2,WallN3,WallP1,WallP2,WallP3,WallP4};
-            foreach (var wall in walls)
+            foreach (var wall in Walls)
             {
                 var rectWall = GetRect(wall);
                 if (Pacman.IntersectsWith(rectWall))
@@ -157,8 +139,14 @@ namespace Pacman
             return flag;
         }
 
+        private void CorrectRight()
+        {
+            
+        }
+
         private void IsCollisionGhost()
         {
+            
             var ghosts = new[] { ImgGhostWhite, ImgGhostRed, ImgGhostYellow, ImgGhostViolet };
             foreach (var ghost in ghosts)
             {
@@ -171,7 +159,6 @@ namespace Pacman
 
         private void IsEatApple()
         {
-            var flag = false;
             for (var apple = 0; apple < Apples.Count; apple++)
             {
                 var rectApple = GetRect(Apples[apple]);
@@ -179,14 +166,13 @@ namespace Pacman
                 {
                     SetCollapsedImage(Apples[apple]);
                     Apples.RemoveAt(apple);
-                    Victory.Visibility = Apples.Count == 0 ? Visibility.Visible : Visibility.Hidden;
                     PacmanScore.Content = ++CountApple;
-                    
+                    Victory.Visibility = Apples.Count == 0 ? Visibility.Visible : Visibility.Hidden;
+                    if (Victory.IsVisible)
+                    {
+                        GhostStop();
+                    }
                 }
-            }
-            if (Victory.IsVisible)
-            {
-                GhostStop();
             }
         }
         #endregion
@@ -200,6 +186,7 @@ namespace Pacman
                 case 1:
                     SetCollapsedImage(Life1);
                     Life--;
+                    GhostStop();
                     SetVisibleImage(GameOver);
                     break;
                 case 2:
@@ -278,11 +265,6 @@ namespace Pacman
             _storyboardGhost.Pause();
         }
         #endregion
-
-        public virtual void OnCollisionEvent()
-        {
-            CollisionEvent?.Invoke();
-        }
     }
 }
 
