@@ -46,7 +46,7 @@ namespace MetroNavigation
             _timer.Interval = TimeSpan.FromMilliseconds(_speed);
         }
 
-
+        
 
         private void SubscribeOnEvent()
         {
@@ -60,6 +60,7 @@ namespace MetroNavigation
 
         private void ClickMouseAction(object sender, MouseButtonEventArgs e)
         {
+
             var point = sender as Ellipse;
             switch (_chooseStation)
             {
@@ -142,13 +143,6 @@ namespace MetroNavigation
                 if (start < i && i%2 != 0)
                     _listRectangle.Add(_paths[i] as Rectangle);
 
-                if (start < i && _paths[i].Name == "PathUniversytetTeatralna")
-                    _listRectangle.Add(PathCrossRoadTeatralnaUniversytet);
-
-                if (start < i && _paths[i].Name == "PathCrossRoadTeatralnaKhreshchatyk")
-                    _listRectangle.Add(PathCrossRoadKhreshchatykTeatralna);
-
-
                 if (_paths[i].Name == endStation.Name)
                 {
                     _listEllipse.Add(_paths[i] as Ellipse);
@@ -177,13 +171,16 @@ namespace MetroNavigation
                 _timer.Stop();
                 flag = false;
             }
-            var storyboard = new Storyboard();
-            var animation = new ColorAnimation(Colors.Yellow, TimeSpan.FromMilliseconds(_speed));
-            _listRectangle[_index].BeginAnimation(SolidColorBrush.ColorProperty, animation);
-            Storyboard.SetTarget(animation, _listRectangle[_index]);
-            Storyboard.SetTargetProperty(animation, new PropertyPath("Fill.Color"));
-            storyboard.Children.Add(animation);
-            storyboard.Begin();
+
+            ColorAnimated(_listRectangle[_index]);
+            if (_listRectangle[_index].Name == "PathUniversytetTeatralna")
+            {
+                ColorAnimated(PathCrossRoadTeatralnaUniversytet);
+            }
+            if (_listRectangle[_index].Name == "PathCrossRoadTeatralnaKhreshchatyk")
+            {
+                ColorAnimated(PathCrossRoadKhreshchatykTeatralna);
+            }
             if (_index < _listEllipse.Count)
                 _listEllipse[_index].Fill = Brushes.Yellow;
             if (flag)
@@ -191,5 +188,16 @@ namespace MetroNavigation
         }
         #endregion
 
+
+        private void ColorAnimated(FrameworkElement element)
+        {
+            var storyboard = new Storyboard();
+            var colorAnimation = new ColorAnimation(Colors.Yellow, TimeSpan.FromMilliseconds(_speed));
+            element.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation);
+            Storyboard.SetTarget(colorAnimation, element);
+            Storyboard.SetTargetProperty(colorAnimation, new PropertyPath("Fill.Color"));
+            storyboard.Children.Add(colorAnimation);
+            storyboard.Begin();
+        }
     }
 }
