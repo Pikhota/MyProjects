@@ -15,10 +15,13 @@ namespace MetroNavigation
     /// </summary>
     public partial class MainWindow : Window
     {
-        private double _speed = 10;
-        private int _index;
-        private readonly DispatcherTimer _timer = new DispatcherTimer();
+        private double _speed = 1000;
+        private int _indexE;
+        private int _indexR;
+        private readonly DispatcherTimer _timerEllipse = new DispatcherTimer();
+        private readonly DispatcherTimer _timerRectangle = new DispatcherTimer();
         private ChooseStation _chooseStation = ChooseStation.Start;
+        private Order _order;
         private readonly FrameworkElement[] _paths;
         private Ellipse _startStation;
         private Ellipse _endStation;
@@ -34,19 +37,25 @@ namespace MetroNavigation
             _paths = new FrameworkElement[]
             {
                 Academmistechko, PathAcademmistechkoZhytomyrska, Zhytomyrska, PathZhytomyrskaSviatoshyn, Sviatoshyn
-                , PathSviatoshynNyvky, Nyvky, PathNyvkyBeresteiska, Beresteiska, PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
-                PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna, Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna,  Teatralna, PathCrossRoadTeatralnaKhreshchatyk, 
+                , PathSviatoshynNyvky, Nyvky, PathNyvkyBeresteiska, Beresteiska,
+                PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
+                PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
+                Vokzalna, PathVokzalnaUniversytet, Universytet
+                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet,  Teatralna,
+                PathCrossRoadTeatralnaKhreshchatyk, PathCrossRoadKhreshchatykTeatralna,
                  Khreshchatyk , PathCrossRoadKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
                  Hidropark, PathHidroparkLivoberezhna, Livoberezhna, PathLivoberezhnaDarnytsia, Darnytsia, PathDarnytsiaChernihivska,
                  Chernihivska, PathChernihivskaLisova, Lisova
             };
             SubscribeOnEvent();
-            _timer.Tick += TimerAnimatedRoute;
-            _timer.Interval = TimeSpan.FromMilliseconds(_speed);
+            _timerEllipse.Tick += TimerEllipseAnimatedEllipse;
+            _timerEllipse.Interval = TimeSpan.FromMilliseconds(_speed);
+            _timerRectangle.Tick += TimerAnimatedRectangle;
+            _timerRectangle.Interval = TimeSpan.FromMilliseconds(_speed);
         }
 
         
+
 
         private void SubscribeOnEvent()
         {
@@ -84,7 +93,14 @@ namespace MetroNavigation
                         {
                             if (path.Name == _startStation.Name)
                             {
-                                AnimatedPath(_startStation, _endStation);
+                                _order = Order.Asc;
+                                SeparatedPath(_startStation, _endStation);
+                                break;
+                            }
+                            if (path.Name == _endStation.Name)
+                            {
+                                _order = Order.Desc;
+                                SeparatedPath(_startStation, _endStation);
                                 break;
                             }
                         }
@@ -97,6 +113,7 @@ namespace MetroNavigation
                     break;
             }
         }
+
 
         #endregion
 
@@ -117,11 +134,11 @@ namespace MetroNavigation
             }
             _listRectangle.Clear();
             _listEllipse.Clear();
-            _index = 0;
-            if (_timer.IsEnabled)
-            {
-                _timer.Stop();
-            }
+            _indexE = 0;
+            if (_timerEllipse.IsEnabled)
+                _timerEllipse.Stop();
+            if (_timerRectangle.IsEnabled)
+                _timerRectangle.Stop();
         }
 
         #endregion
@@ -129,67 +146,108 @@ namespace MetroNavigation
 
         #region SeparateArrays
 
-        private void AnimatedPath(Ellipse startStation, Ellipse endStation)
+        private void SeparatedPath(Ellipse startStation, Ellipse endStation)
         {
-            var start = int.MaxValue;
-            for (var i = 0; i < _paths.Length; i++)
+
+            switch (_order)
             {
-                if (_paths[i].Name == startStation.Name)
+                case Order.Asc:
                 {
-                    start = i;
-                    _listEllipse.Add(_paths[i] as Ellipse);
+                        var start = int.MaxValue;
+                        for (var i = 0; i < _paths.Length; i++)
+                        {
+                            if (_paths[i].Name == startStation.Name)
+                                start = i;
+
+                            if (_paths[i].Name == endStation.Name)
+                                break;
+
+                            if (start < i && _paths[i] is Ellipse)
+                                _listEllipse.Add((Ellipse)_paths[i]);
+
+                            if (start < i && _paths[i] is Rectangle)
+                                _listRectangle.Add((Rectangle)_paths[i]);
+
+                        }
+                        break;
+                }
+                case Order.Desc:
+                {
+                    var start = int.MinValue;
+                        for (var i = _paths.Length - 1; i >= 0; i--)
+                        {
+                            if (_paths[i].Name == startStation.Name)
+                                start = i;
+
+                            if (_paths[i].Name == endStation.Name)
+                                break;
+
+                            if (start > i && _paths[i] is Ellipse)
+                                _listEllipse.Add((Ellipse)_paths[i]);
+
+                            if (start > i && _paths[i] is Rectangle)
+                                _listRectangle.Add((Rectangle)_paths[i]);
+
+                        }
+                        break;
                 }
 
-                if (start < i && i%2 != 0)
-                    _listRectangle.Add(_paths[i] as Rectangle);
-
-                if (_paths[i].Name == endStation.Name)
-                {
-                    _listEllipse.Add(_paths[i] as Ellipse);
-                    if(_paths[i].Name != Lisova.Name)
-                        _listRectangle.Add(_paths[i + 1] as Rectangle);
-                    break;
-                }
-                if (start < i && i%2 == 0)
-                    _listEllipse.Add(_paths[i] as Ellipse);
             }
 
-            if (!_timer.IsEnabled)
-                _timer.Start();
-        }
+            _indexR = 0;
+            _indexE = 0;
 
+            if (!_timerEllipse.IsEnabled)
+                _timerEllipse.Start();
+            if (!_timerRectangle.IsEnabled)
+                _timerRectangle.Start();
+        }
         #endregion
 
         #region AnimatedRoute
-        private void TimerAnimatedRoute(object sender, EventArgs eventArgs)
+        private void TimerEllipseAnimatedEllipse(object sender, EventArgs eventArgs)
         {
             var flag = true;
 
-            if (_index + 1 == _listEllipse.Count)
+            if (_indexE + 1 == _listEllipse.Count)
             {
-                _index = 0;
-                _timer.Stop();
+                ColorAnimated(_listEllipse[_indexE]);
+                _timerEllipse.Stop();
+                flag = false;
+            }
+            else if (_listEllipse.Count == 0)
+            {
+                _timerEllipse.Stop();
                 flag = false;
             }
 
-            ColorAnimated(_listRectangle[_index]);
-            if (_listRectangle[_index].Name == "PathUniversytetTeatralna")
-            {
-                ColorAnimated(PathCrossRoadTeatralnaUniversytet);
-            }
-            if (_listRectangle[_index].Name == "PathCrossRoadTeatralnaKhreshchatyk")
-            {
-                ColorAnimated(PathCrossRoadKhreshchatykTeatralna);
-            }
-            if (_index < _listEllipse.Count)
-                _listEllipse[_index].Fill = Brushes.Yellow;
             if (flag)
-                _index++;
+            {
+                ColorAnimated(_listEllipse[_indexE]);
+                _indexE++;
+            }
+        }
+
+        private void TimerAnimatedRectangle(object sender, EventArgs e)
+        {
+            var flag = true;
+
+            if (_indexR + 1 == _listRectangle.Count)
+            {
+                ColorAnimated(_listRectangle[_indexR]);
+                _timerRectangle.Stop();
+                flag = false;
+            }
+            if (flag)
+            {
+                ColorAnimated(_listRectangle[_indexR]);
+                _indexR++;
+            }
         }
         #endregion
 
 
-        private void ColorAnimated(FrameworkElement element)
+        private void ColorAnimated(UIElement element)
         {
             var storyboard = new Storyboard();
             var colorAnimation = new ColorAnimation(Colors.Yellow, TimeSpan.FromMilliseconds(_speed));

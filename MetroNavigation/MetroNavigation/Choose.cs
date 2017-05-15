@@ -4,3 +4,9 @@
     End,
     NewPath
 }
+
+internal enum Order
+{
+    Asc,
+    Desc
+}
