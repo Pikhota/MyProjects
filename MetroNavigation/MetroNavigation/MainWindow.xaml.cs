@@ -22,7 +22,6 @@ namespace MetroNavigation
         private readonly DispatcherTimer _timerEllipse = new DispatcherTimer();
         private readonly DispatcherTimer _timerRectangle = new DispatcherTimer();
         private ChooseStation _chooseStation = ChooseStation.Start;
-        private Order _order;
         private readonly FrameworkElement[] _pathsRedLine;
         private readonly FrameworkElement[] _pathsBlueLine;
         private readonly FrameworkElement[] _pathsGreenLine;
@@ -247,13 +246,13 @@ namespace MetroNavigation
 
         private void ClickMouseAction(object sender, MouseButtonEventArgs e)
         {
-            Ways way;
             var point = sender as Ellipse;
             switch (_chooseStation)
             {
                 case ChooseStation.Start:
                     if (point != null)
                     {
+                        point.MouseDown -= ClickMouseAction;
                         _tempStart.Fill = point.Fill;
                         point.Fill = Brushes.Yellow;
                         _startStation = point;
@@ -261,60 +260,76 @@ namespace MetroNavigation
                     }
                     break;
                 case ChooseStation.End:
-
+                    _startStation.MouseDown += ClickMouseAction;
                     if (point != null)
                     {
                         _tempEnd.Fill = point.Fill;
                         point.Fill = Brushes.Yellow;
                         _endStation = point;
-                        way = ChoosenWay(_startStation, _endStation);
+                        var way = ChoosenWay(_startStation, _endStation);
                         _chooseStation = ChooseStation.NewPath;
+                        Order pathOrder;
                         switch (way)
                         {
                             case Ways.RedLine:
-                                method(_pathsRedLine, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsRedLine);
+                                SeparatedPath(_startStation, _endStation, _pathsRedLine, pathOrder);
                                 break;
                             case Ways.BlueLine:
-                                method(_pathsBlueLine, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsBlueLine);
+                                SeparatedPath(_startStation, _endStation, _pathsBlueLine, pathOrder);
                                 break;
                             case Ways.GreenLine:
-                                method(_pathsGreenLine, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsGreenLine);
+                                SeparatedPath(_startStation, _endStation, _pathsGreenLine, pathOrder);
                                 break;
                             case Ways.R1B1:
-                                method(_pathsR1B1, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsR1B1);
+                                SeparatedPath(_startStation, _endStation, _pathsR1B1, pathOrder);
                                 break;
                             case Ways.R1B2:
-                                method(_pathsR1B2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsR1B2);
+                                SeparatedPath(_startStation, _endStation, _pathsR1B2, pathOrder);
                                 break;
                             case Ways.R1G1:
-                                method(_pathsR1G1, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsR1G1);
+                                SeparatedPath(_startStation, _endStation, _pathsR1G1, pathOrder);
                                 break;
                             case Ways.R1G2:
-                                method(_pathsR1G2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsR1G2);
+                                SeparatedPath(_startStation, _endStation, _pathsR1G2, pathOrder);
                                 break;
                             case Ways.G1B1:
-                                method(_pathsG1B1, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsG1B1);
+                                SeparatedPath(_startStation, _endStation, _pathsG1B1, pathOrder);
                                 break;
                             case Ways.G1B2:
-                                method(_pathsG1B2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsG1B2);
+                                SeparatedPath(_startStation, _endStation, _pathsG1B2, pathOrder);
                                 break;
                             case Ways.G1R2:
-                                method(_pathsG1R2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsG1R2);
+                                SeparatedPath(_startStation, _endStation, _pathsG1R2, pathOrder);
                                 break;
                             case Ways.B1G2:
-                                method(_pathsB1G2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsB1G2);
+                                SeparatedPath(_startStation, _endStation, _pathsB1G2, pathOrder);
                                 break;
                             case Ways.B1R2:
-                                method(_pathsB1R2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsB1R2);
+                                SeparatedPath(_startStation, _endStation, _pathsB1R2, pathOrder);
                                 break;
                             case Ways.R2B2:
-                                method(_pathsR2B2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsR2B2);
+                                SeparatedPath(_startStation, _endStation, _pathsR2B2, pathOrder);
                                 break;
                             case Ways.R2G2:
-                                method(_pathsR2G2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsR2G2);
+                                SeparatedPath(_startStation, _endStation, _pathsR2G2, pathOrder);
                                 break;
                             case Ways.B2G2:
-                                method(_pathsB2G2, _startStation, _endStation);
+                                pathOrder = GetPathOrder(_pathsB2G2);
+                                SeparatedPath(_startStation, _endStation, _pathsB2G2, pathOrder);
                                 break;
                         }
                     }
@@ -327,24 +342,22 @@ namespace MetroNavigation
             }
         }
 
-        private void method(FrameworkElement[] array, Ellipse start, Ellipse end)
+        private Order GetPathOrder(FrameworkElement[] array)
         {
+            
             foreach (var path in array)
             {
-                if (path.Name == start.Name)
+                if (path.Name == _startStation.Name)
                 {
-                    _order = Order.Asc;
-                    SeparatedPath(start, end, array);
-                    break;
+                    return Order.Asc;
+                    
                 }
-                if (path.Name == end.Name)
+                if (path.Name == _endStation.Name)
                 {
-                    _order = Order.Desc;
-                    SeparatedPath(start, end, array);
-                    break;
+                    return Order.Desc;
                 }
             }
-
+            return Order.Default;
         }
 
         private Ways ChoosenWay(Ellipse startStation, Ellipse endStation)
@@ -411,13 +424,12 @@ namespace MetroNavigation
 
         #endregion
 
-
         #region SeparateArrays
 
-        private void SeparatedPath(Ellipse startStation, Ellipse endStation, FrameworkElement[] array)
+        private void SeparatedPath(Ellipse startStation, Ellipse endStation, FrameworkElement[] array, Order pathOrder )
         {
 
-            switch (_order)
+            switch (pathOrder)
             {
                 case Order.Asc:
                     {
@@ -531,8 +543,5 @@ namespace MetroNavigation
             storyboard.Begin();
         }
         #endregion
-
-
-
     }
 }

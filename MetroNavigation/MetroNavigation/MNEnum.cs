@@ -8,7 +8,8 @@
 internal enum Order
 {
     Asc,
-    Desc
+    Desc,
+    Default
 }
 
 internal enum Ways
