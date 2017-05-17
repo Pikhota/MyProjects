@@ -16,7 +16,7 @@ namespace MetroNavigation
     /// </summary>
     public partial class MainWindow : Window
     {
-        private double _speed = 500;
+        private double _speed = 10;
         private int _indexE;
         private int _indexR;
         private readonly DispatcherTimer _timerEllipse = new DispatcherTimer();
@@ -36,6 +36,7 @@ namespace MetroNavigation
         private readonly FrameworkElement[] _pathsG1B1;
         private readonly FrameworkElement[] _pathsG1R2;
         private readonly FrameworkElement[] _pathsG1B2;
+        
 
         private Ellipse _startStation;
         private Ellipse _endStation;
@@ -76,7 +77,7 @@ namespace MetroNavigation
             _pathsGreenLine = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota,PathZolotiVorotaPalatsSportu,PathPalatsSportuTeatralna, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu,
+                ZolotiVorota,PathZolotiVorotaPalatsSportu,PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu,
                 Klovska, PathKlovskaPecherska,
                 Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
@@ -105,7 +106,7 @@ namespace MetroNavigation
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
                 PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet,  Teatralna,ZolotiVorota,PathZolotiVorotaPalatsSportu, PalatsSportu, PathPalatsSportuKlovska, Klovska, PathKlovskaPecherska,
+                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet,  Teatralna,ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
                 Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
                 PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
@@ -158,7 +159,7 @@ namespace MetroNavigation
             _pathsG1B1 = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota,PathZolotiVorotaPalatsSportu, PalatsSportu,PloshchaLvaTolstoho, CrossRoadMaidanNezalezhnostiPloshchaLvaTolstoho,
+                ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu,PloshchaLvaTolstoho, CrossRoadMaidanNezalezhnostiPloshchaLvaTolstoho,
                 MaidanNezalezhnosti, CrossRoadPoshtovaPloshchaMaidanNezalezhnosti,PoshtovaPloshcha,
                  PathKontraktovaPloshchaPochtovaPloshcha,KontraktovaPloshcha, PathTarasaShevchenkaKontraktovaPloshcha,
                  TarasaShevchenka,PathPetrivkaTarasaShevchenka,Petrivka,PathObolonPetrivka,Obolon,PathMinskaObolon,
@@ -178,7 +179,7 @@ namespace MetroNavigation
             _pathsG1B2 = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota,PathZolotiVorotaPalatsSportu, PalatsSportu, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
                 PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
                 PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
                 Ipodrom, PathIpodromTeremky, Teremky
@@ -380,13 +381,13 @@ namespace MetroNavigation
                                     if (path.Name == _startStation.Name)
                                     {
                                         _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsB1G2);
+                                        SeparatedPath(_startStation, _endStation, _pathsG1B2);
                                         break;
                                     }
                                     if (path.Name == _endStation.Name)
                                     {
                                         _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsB1G2);
+                                        SeparatedPath(_startStation, _endStation, _pathsG1B2);
                                         break;
                                     }
                                 }

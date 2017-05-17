@@ -250,7 +250,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="PathPalatsSportuTeatralna" Fill="Green" HorizontalAlignment="Left" Height="57" Margin="591,381,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5">
+        <Rectangle x:Name="PathPalatsSportuZolotiVorota" Fill="Green" HorizontalAlignment="Left" Height="57" Margin="591,381,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
