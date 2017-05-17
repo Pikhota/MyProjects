@@ -16,7 +16,7 @@ namespace MetroNavigation
     /// </summary>
     public partial class MainWindow : Window
     {
-        private double _speed = 10;
+        private double _speed = 100;
         private int _indexE;
         private int _indexR;
         private readonly DispatcherTimer _timerEllipse = new DispatcherTimer();
@@ -36,7 +36,9 @@ namespace MetroNavigation
         private readonly FrameworkElement[] _pathsG1B1;
         private readonly FrameworkElement[] _pathsG1R2;
         private readonly FrameworkElement[] _pathsG1B2;
-        
+        private readonly FrameworkElement[] _pathsR2B2;
+        private readonly FrameworkElement[] _pathsR2G2;
+        private readonly FrameworkElement[] _pathsB2G2;
 
         private Ellipse _startStation;
         private Ellipse _endStation;
@@ -57,9 +59,9 @@ namespace MetroNavigation
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
                 PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet,  Teatralna,
-                PathCrossRoadTeatralnaKhreshchatyk, PathCrossRoadKhreshchatykTeatralna,
-                 Khreshchatyk , PathCrossRoadKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
+                , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,
+                PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
+                 Khreshchatyk , PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
                  Hidropark, PathHidroparkLivoberezhna, Livoberezhna, PathLivoberezhnaDarnytsia, Darnytsia, PathDarnytsiaChernihivska,
                  Chernihivska, PathChernihivskaLisova, Lisova
             };
@@ -67,8 +69,8 @@ namespace MetroNavigation
             {
                 HeroivDnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
                 Petrivka, PathPetrivkaTarasaShevchenka, TarasaShevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
-                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha, CrossRoadPoshtovaPloshchaMaidanNezalezhnosti,MaidanNezalezhnosti,
-                CrossRoadMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha, PathPoshtovaPloshchaMaidanNezalezhnosti,MaidanNezalezhnosti,
+                PathMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
                 PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
                 PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
                 Ipodrom, PathIpodromTeremky, Teremky
@@ -91,9 +93,9 @@ namespace MetroNavigation
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
                 PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet,  Teatralna,
-                PathCrossRoadTeatralnaKhreshchatyk, PathCrossRoadKhreshchatykTeatralna,
-                 Khreshchatyk,MaidanNezalezhnosti, CrossRoadPoshtovaPloshchaMaidanNezalezhnosti,PoshtovaPloshcha,
+                , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,
+                PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
+                 Khreshchatyk,MaidanNezalezhnosti, PathPoshtovaPloshchaMaidanNezalezhnosti,PoshtovaPloshcha,
                  PathKontraktovaPloshchaPochtovaPloshcha,KontraktovaPloshcha, PathTarasaShevchenkaKontraktovaPloshcha,
                  TarasaShevchenka,PathPetrivkaTarasaShevchenka,Petrivka,PathObolonPetrivka,Obolon,PathMinskaObolon,
                  Minska,PathHeroivDnipraMinska,HeroivDnipra
@@ -106,7 +108,7 @@ namespace MetroNavigation
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
                 PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet,  Teatralna,ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
+                , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
                 Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
                 PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
@@ -119,8 +121,8 @@ namespace MetroNavigation
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
                 PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet, Teatralna, ZolotiVorota,PathLukianivskaZolotiVorota,
-                Lukianivska,PathDorohozhychiLukianivska,Dorohozhychi,PathSyretsDorohozhychi, Syrets   
+                , PathUniversytetTeatralna, PathTeatralnaUniversytet, Teatralna, ZolotiVorota,PathLukianivskaZolotiVorota,
+                Lukianivska,PathDorohozhychiLukianivska,Dorohozhychi,PathSyretsDorohozhychi, Syrets
             };
 
             _pathsR1B2 = new FrameworkElement[]
@@ -130,9 +132,9 @@ namespace MetroNavigation
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
                 PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathCrossRoadTeatralnaUniversytet,  Teatralna,
-                PathCrossRoadTeatralnaKhreshchatyk, PathCrossRoadKhreshchatykTeatralna,
-                 Khreshchatyk,MaidanNezalezhnosti,CrossRoadMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,
+                PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
+                 Khreshchatyk,MaidanNezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
                 PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
                 PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
                 Ipodrom, PathIpodromTeremky, Teremky
@@ -141,8 +143,8 @@ namespace MetroNavigation
             {
                 HeroivDnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
                 Petrivka, PathPetrivkaTarasaShevchenka, TarasaShevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
-                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha, CrossRoadPoshtovaPloshchaMaidanNezalezhnosti,MaidanNezalezhnosti,
-                 Khreshchatyk, PathCrossRoadKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
+                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha, PathPoshtovaPloshchaMaidanNezalezhnosti,MaidanNezalezhnosti,
+                 Khreshchatyk, PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
                  Hidropark, PathHidroparkLivoberezhna, Livoberezhna, PathLivoberezhnaDarnytsia, Darnytsia, PathDarnytsiaChernihivska,
                  Chernihivska, PathChernihivskaLisova, Lisova
             };
@@ -151,7 +153,9 @@ namespace MetroNavigation
             {
                 HeroivDnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
                 Petrivka, PathPetrivkaTarasaShevchenka, TarasaShevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
-                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha,PalatsSportu, PathPalatsSportuKlovska, Klovska, PathKlovskaPecherska,
+                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha,PathPoshtovaPloshchaMaidanNezalezhnosti,
+                MaidanNezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho,PloshchaLvaTolstoho
+                ,PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
                 Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
                 PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
@@ -159,19 +163,19 @@ namespace MetroNavigation
             _pathsG1B1 = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu,PloshchaLvaTolstoho, CrossRoadMaidanNezalezhnostiPloshchaLvaTolstoho,
-                MaidanNezalezhnosti, CrossRoadPoshtovaPloshchaMaidanNezalezhnosti,PoshtovaPloshcha,
+                ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu,PloshchaLvaTolstoho, PathMaidanNezalezhnostiPloshchaLvaTolstoho,
+                MaidanNezalezhnosti, PathPoshtovaPloshchaMaidanNezalezhnosti,PoshtovaPloshcha,
                  PathKontraktovaPloshchaPochtovaPloshcha,KontraktovaPloshcha, PathTarasaShevchenkaKontraktovaPloshcha,
                  TarasaShevchenka,PathPetrivkaTarasaShevchenka,Petrivka,PathObolonPetrivka,Obolon,PathMinskaObolon,
                  Minska,PathHeroivDnipraMinska,HeroivDnipra
             };
-            
+
             _pathsG1R2 = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
                 ZolotiVorota, Teatralna,
-                PathCrossRoadTeatralnaKhreshchatyk, PathCrossRoadKhreshchatykTeatralna,
-                 Khreshchatyk , PathCrossRoadKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
+                PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
+                 Khreshchatyk , PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
                  Hidropark, PathHidroparkLivoberezhna, Livoberezhna, PathLivoberezhnaDarnytsia, Darnytsia, PathDarnytsiaChernihivska,
                  Chernihivska, PathChernihivskaLisova, Lisova
             };
@@ -185,6 +189,34 @@ namespace MetroNavigation
                 Ipodrom, PathIpodromTeremky, Teremky
             };
 
+            _pathsR2B2 = new FrameworkElement[]
+            {
+                Lisova,PathChernihivskaLisova,Chernihivska,PathDarnytsiaChernihivska,Darnytsia,PathLivoberezhnaDarnytsia,Livoberezhna,PathHidroparkLivoberezhna,
+                Hidropark,PathDniproHidropark,Dnepr,PathArsenalnaDnipro,Arsenalna,PathKhreshchatykArsenalna,Khreshchatyk,
+                MaidanNezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
+                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
+                Ipodrom, PathIpodromTeremky, Teremky
+            };
+            _pathsR2G2 = new FrameworkElement[]
+            {
+                Lisova,PathChernihivskaLisova,Chernihivska,PathDarnytsiaChernihivska,Darnytsia,PathLivoberezhnaDarnytsia,Livoberezhna,PathHidroparkLivoberezhna,
+                Hidropark,PathDniproHidropark,Dnepr,PathArsenalnaDnipro,Arsenalna,PathKhreshchatykArsenalna,Khreshchatyk, PathKhreshchatykTeatralna, PathTeatralnaKhreshchatyk
+                ,Teatralna,ZolotiVorota, PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
+                Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
+                Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
+                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
+            };
+            _pathsB2G2 = new FrameworkElement[]
+            {
+                Teremky,PathIpodromTeremky,Ipodrom,PathVystavkovyiTsentrIpodrom,VystavkovyiTsentr,PathVasylkivskaVystavkovyiTsentr,Vasylkivska,
+                PathHolosiivskaVasylkivska,Holosiivska,PathDemiivskaHolosiivka,Demiivska,PathLybidskaDemiivska,Lybidska,PathPalatsUkrayinaLybidska,
+                PalatsUkrayina,PathOlimpiiskaPalatsUkrayina,Olimpiiska,PathPloshchaLvaTolstohoOlimpiiska,PloshchaLvaTolstoho,
+                PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
+                Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
+                Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
+                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
+            };
             SubscribeOnEvent();
             _timerEllipse.Tick += TimerEllipseAnimatedEllipse;
             _timerEllipse.Interval = TimeSpan.FromMilliseconds(_speed);
@@ -192,7 +224,7 @@ namespace MetroNavigation
             _timerRectangle.Interval = TimeSpan.FromMilliseconds(_speed);
         }
 
-        
+
 
 
         private void SubscribeOnEvent()
@@ -229,7 +261,7 @@ namespace MetroNavigation
                     }
                     break;
                 case ChooseStation.End:
-                    
+
                     if (point != null)
                     {
                         _tempEnd.Fill = point.Fill;
@@ -240,208 +272,49 @@ namespace MetroNavigation
                         switch (way)
                         {
                             case Ways.RedLine:
-                                foreach (var path in _pathsRedLine)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsRedLine);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsRedLine);
-                                        break;
-                                    }
-                                }
+                                method(_pathsRedLine, _startStation, _endStation);
                                 break;
-                                case Ways.BlueLine:
-                                foreach (var path in _pathsBlueLine)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsBlueLine);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsBlueLine);
-                                        break;
-                                    }
-                                }
+                            case Ways.BlueLine:
+                                method(_pathsBlueLine, _startStation, _endStation);
                                 break;
                             case Ways.GreenLine:
-                                foreach (var path in _pathsGreenLine)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsGreenLine);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsGreenLine);
-                                        break;
-                                    }
-                                }
+                                method(_pathsGreenLine, _startStation, _endStation);
                                 break;
                             case Ways.R1B1:
-                                foreach (var path in _pathsR1B1)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1B1);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1B1);
-                                        break;
-                                    }
-                                }
+                                method(_pathsR1B1, _startStation, _endStation);
                                 break;
                             case Ways.R1B2:
-                                foreach (var path in _pathsR1B2)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1B2);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1B2);
-                                        break;
-                                    }
-                                }
+                                method(_pathsR1B2, _startStation, _endStation);
                                 break;
                             case Ways.R1G1:
-                                foreach (var path in _pathsR1G1)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1G1);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1G1);
-                                        break;
-                                    }
-                                }
+                                method(_pathsR1G1, _startStation, _endStation);
                                 break;
                             case Ways.R1G2:
-                                foreach (var path in _pathsR1G2)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1G2);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsR1G2);
-                                        break;
-                                    }
-                                }
+                                method(_pathsR1G2, _startStation, _endStation);
                                 break;
                             case Ways.G1B1:
-                                foreach (var path in _pathsG1B1)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsG1B1);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsG1B1);
-                                        break;
-                                    }
-                                }
+                                method(_pathsG1B1, _startStation, _endStation);
                                 break;
                             case Ways.G1B2:
-                                foreach (var path in _pathsG1B2)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsG1B2);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsG1B2);
-                                        break;
-                                    }
-                                }
+                                method(_pathsG1B2, _startStation, _endStation);
                                 break;
                             case Ways.G1R2:
-                                foreach (var path in _pathsG1R2)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsG1R2);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsG1R2);
-                                        break;
-                                    }
-                                }
+                                method(_pathsG1R2, _startStation, _endStation);
                                 break;
                             case Ways.B1G2:
-                                foreach (var path in _pathsB1G2)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsB1G2);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsB1G2);
-                                        break;
-                                    }
-                                }
+                                method(_pathsB1G2, _startStation, _endStation);
                                 break;
                             case Ways.B1R2:
-                                foreach (var path in _pathsB1R2)
-                                {
-                                    if (path.Name == _startStation.Name)
-                                    {
-                                        _order = Order.Asc;
-                                        SeparatedPath(_startStation, _endStation, _pathsB1R2);
-                                        break;
-                                    }
-                                    if (path.Name == _endStation.Name)
-                                    {
-                                        _order = Order.Desc;
-                                        SeparatedPath(_startStation, _endStation, _pathsB1R2);
-                                        break;
-                                    }
-                                }
+                                method(_pathsB1R2, _startStation, _endStation);
+                                break;
+                            case Ways.R2B2:
+                                method(_pathsR2B2, _startStation, _endStation);
+                                break;
+                            case Ways.R2G2:
+                                method(_pathsR2G2, _startStation, _endStation);
+                                break;
+                            case Ways.B2G2:
+                                method(_pathsB2G2, _startStation, _endStation);
                                 break;
                         }
                     }
@@ -454,11 +327,29 @@ namespace MetroNavigation
             }
         }
 
-        #endregion
+        private void method(FrameworkElement[] array, Ellipse start, Ellipse end)
+        {
+            foreach (var path in array)
+            {
+                if (path.Name == start.Name)
+                {
+                    _order = Order.Asc;
+                    SeparatedPath(start, end, array);
+                    break;
+                }
+                if (path.Name == end.Name)
+                {
+                    _order = Order.Desc;
+                    SeparatedPath(start, end, array);
+                    break;
+                }
+            }
+
+        }
 
         private Ways ChoosenWay(Ellipse startStation, Ellipse endStation)
         {
-            if(_pathsRedLine.Contains(startStation) && _pathsRedLine.Contains(endStation))
+            if (_pathsRedLine.Contains(startStation) && _pathsRedLine.Contains(endStation))
                 return Ways.RedLine;
             if (_pathsBlueLine.Contains(startStation) && _pathsBlueLine.Contains(endStation))
                 return Ways.BlueLine;
@@ -482,8 +373,16 @@ namespace MetroNavigation
                 return Ways.B1G2;
             if (_pathsB1R2.Contains(startStation) && _pathsB1R2.Contains(endStation))
                 return Ways.B1R2;
+            if (_pathsR2B2.Contains(startStation) && _pathsR2B2.Contains(endStation))
+                return Ways.R2B2;
+            if (_pathsR2G2.Contains(startStation) && _pathsR2G2.Contains(endStation))
+                return Ways.R2G2;
+            if (_pathsB2G2.Contains(startStation) && _pathsB2G2.Contains(endStation))
+                return Ways.B2G2;
             return Ways.Default;
         }
+        #endregion
+
         #region Cleaner
 
         private void Cleaner()
@@ -517,11 +416,11 @@ namespace MetroNavigation
 
         private void SeparatedPath(Ellipse startStation, Ellipse endStation, FrameworkElement[] array)
         {
-            
+
             switch (_order)
             {
                 case Order.Asc:
-                {
+                    {
                         var start = int.MaxValue;
                         for (var i = 0; i < array.Length; i++)
                         {
@@ -543,10 +442,10 @@ namespace MetroNavigation
 
                         }
                         break;
-                }
+                    }
                 case Order.Desc:
-                {
-                    var start = int.MinValue;
+                    {
+                        var start = int.MinValue;
                         for (var i = array.Length - 1; i >= 0; i--)
                         {
                             if (array[i].Name == startStation.Name)
@@ -566,7 +465,7 @@ namespace MetroNavigation
                             }
                         }
                         break;
-                }
+                    }
 
             }
 
@@ -620,8 +519,6 @@ namespace MetroNavigation
                 _indexR++;
             }
         }
-        #endregion
-
 
         private void ColorAnimated(UIElement element)
         {
@@ -633,5 +530,9 @@ namespace MetroNavigation
             storyboard.Children.Add(colorAnimation);
             storyboard.Begin();
         }
+        #endregion
+
+
+
     }
 }

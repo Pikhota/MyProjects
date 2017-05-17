@@ -39,7 +39,7 @@
         <Rectangle x:Name="PathPolitekhnichnyiInstytutVokzalna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="64" Margin="343,405,0,0" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathVokzalnaUniversytet" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="55" Margin="400,405,0,0" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
         <Rectangle x:Name="PathUniversytetTeatralna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="64" Margin="451,405,0,0" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" />
-        <Rectangle x:Name="PathCrossRoadTeatralnaUniversytet"  Fill="Red" HorizontalAlignment="Right" Height="10" Stroke="Black"   VerticalAlignment="Top" Width="44" Margin="0,400,535,0" RenderTransformOrigin="1.035,0.979" Panel.ZIndex="-1">
+        <Rectangle x:Name="PathTeatralnaUniversytet"  Fill="Red" HorizontalAlignment="Right" Height="10" Stroke="Black"   VerticalAlignment="Top" Width="44" Margin="0,400,535,0" RenderTransformOrigin="1.035,0.979" Panel.ZIndex="-1">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1"/>
@@ -49,7 +49,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="PathCrossRoadTeatralnaKhreshchatyk"  Fill="Red" HorizontalAlignment="Right" Height="10" Stroke="Black" VerticalAlignment="Top" Width="51" Margin="0,375,456,0" RenderTransformOrigin="0.1,0.513" Panel.ZIndex="-1">
+        <Rectangle x:Name="PathTeatralnaKhreshchatyk"  Fill="Red" HorizontalAlignment="Right" Height="10" Stroke="Black" VerticalAlignment="Top" Width="51" Margin="0,375,456,0" RenderTransformOrigin="0.1,0.513" Panel.ZIndex="-1">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -59,8 +59,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="PathCrossRoadKhreshchatykTeatralna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="60" Margin="570,345,0,0" Panel.ZIndex="-1"/>
-        <Rectangle x:Name="PathCrossRoadKhreshchatykArsenalna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="90" Margin="630,345,0,0" Panel.ZIndex="-1"/>
+        <Rectangle x:Name="PathKhreshchatykTeatralna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="60" Margin="570,345,0,0" Panel.ZIndex="-1"/>
+        <Rectangle x:Name="PathKhreshchatykArsenalna" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="90" Margin="630,345,0,0" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathArsenalnaDnipro" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="72" Margin="720,345,0,0" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathDniproHidropark" Fill="Red" HorizontalAlignment="Left" Height="10" Stroke="Black" VerticalAlignment="Top" Width="72" Margin="779,320,0,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-1">
             <Rectangle.RenderTransform>
@@ -136,8 +136,8 @@
         <Rectangle x:Name="PathPetrivkaTarasaShevchenka" Fill="Blue" HorizontalAlignment="Left" Height="32" Margin="626,160,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathTarasaShevchenkaKontraktovaPloshcha" Fill="Blue" HorizontalAlignment="Left" Height="32" Margin="626,207,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathKontraktovaPloshchaPochtovaPloshcha" Fill="Blue" HorizontalAlignment="Left" Height="32" Margin="626,246,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
-        <Rectangle x:Name ="CrossRoadPoshtovaPloshchaMaidanNezalezhnosti" Fill="Blue" HorizontalAlignment="Left" Height="32" Margin="626,289,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
-        <Rectangle x:Name="CrossRoadMaidanNezalezhnostiPloshchaLvaTolstoho" Fill="Blue" HorizontalAlignment="Left" Height="42" Margin="626,364,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
+        <Rectangle x:Name ="PathPoshtovaPloshchaMaidanNezalezhnosti" Fill="Blue" HorizontalAlignment="Left" Height="32" Margin="626,289,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
+        <Rectangle x:Name="PathMaidanNezalezhnostiPloshchaLvaTolstoho" Fill="Blue" HorizontalAlignment="Left" Height="42" Margin="626,364,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathPloshchaLvaTolstohoOlimpiiska" Fill="Blue" HorizontalAlignment="Left" Height="69" Margin="626,416,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathOlimpiiskaPalatsUkrayina" Fill="Blue" HorizontalAlignment="Left" Height="49" Margin="626,492,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
         <Rectangle x:Name="PathPalatsUkrayinaLybidska" Fill="Blue" HorizontalAlignment="Left" Height="58" Margin="626,547,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
@@ -195,14 +195,12 @@
         <Ellipse x:Name="Syrets" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="299,139,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Dorohozhychi" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="339,179,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Lukianivska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="379,219,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="LvivskaBrama" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="429,269,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="ZolotiVorota" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="519,359,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="PalatsSportu" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="638,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Klovska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="699,419,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Pecherska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="719,441,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="DruzhbyNarodiv" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="749,469,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Vydubychi" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="779,500,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="Telychka" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="799,519,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Slavutych" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="829,549,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Osokorky" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="850,571,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Pozniaky" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="879,599,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>

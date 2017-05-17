@@ -25,5 +25,9 @@ internal enum Ways
     G1B1,
     G1R2,
     G1B2,
+    R2B2,
+    R2G2,
+    G2B2,
+    B2G2,
     Default
 }
