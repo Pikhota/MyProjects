@@ -20,12 +20,12 @@ namespace MoneySystem
                     CheckMoney(pens))
                 {
                     var moneySystem = new OldMoneySystem(decimal.Parse(pound), decimal.Parse(shilling), decimal.Parse(pens));
-                    Console.WriteLine("Old UK money system: " + pound + '.' + shilling + '.' + pens);
+                    Console.WriteLine($"Old UK money system: {pound}.{shilling}.{pens}");
                     moneySystem.GetNewSystemMoney();
                     finish = true;
                 }
             }
-            Console.ReadLine();
+            Console.ReadKey();
         }
         
         internal class OldMoneySystem
@@ -49,7 +49,7 @@ namespace MoneySystem
                 const decimal deflation = 2.4M;
                 var money = Pens + Shilling + Pound;
                 var result = (money / 100) / deflation;
-                Console.WriteLine("New UK money system: " + result);
+                Console.WriteLine($"New UK money system: {result:N2}");
             }   
         }
         public static bool CheckMoney(string money)
