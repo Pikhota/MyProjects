@@ -20,7 +20,6 @@ namespace MoneySystem
                     CheckMoney(pens))
                 {
                     var moneySystem = new OldMoneySystem(decimal.Parse(pound), decimal.Parse(shilling), decimal.Parse(pens));
-                    //ReSharper wants  check  fields on null, but my method CheckMoney already checked this.
                     Console.WriteLine("Old UK money system: " + pound + '.' + shilling + '.' + pens);
                     moneySystem.GetNewSystemMoney();
                     finish = true;
@@ -62,19 +61,13 @@ namespace MoneySystem
                 {
                     if (char.IsDigit(anyString[i])){}
                     else if (anyString[i] == anyString.Length - 1)
-                    {
                         return true;
-                    }
                     else
-                    {
                         return false;
-                    }
                 }   
             }
             else
-            {
                 return false;
-            }
             return true;
         }
     }
