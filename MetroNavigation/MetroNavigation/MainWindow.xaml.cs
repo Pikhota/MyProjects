@@ -16,7 +16,7 @@ namespace MetroNavigation
     /// </summary>
     public partial class MainWindow : Window
     {
-        private double _speed = 100;
+        private const double Time = 100;
         private int _indexE;
         private int _indexR;
         private readonly DispatcherTimer _timerEllipse = new DispatcherTimer();
@@ -46,6 +46,7 @@ namespace MetroNavigation
         private readonly List<Ellipse> _listEllipse = new List<Ellipse>();
         private readonly List<Rectangle> _listRectangle = new List<Rectangle>();
         private readonly List<Brush> _colors = new List<Brush>();
+        //private List<Ellipse> list = new List<Ellipse>();
 
         public MainWindow()
         {
@@ -56,33 +57,33 @@ namespace MetroNavigation
                 Academmistechko, PathAcademmistechkoZhytomyrska, Zhytomyrska, PathZhytomyrskaSviatoshyn, Sviatoshyn
                 , PathSviatoshynNyvky, Nyvky, PathNyvkyBeresteiska, Beresteiska,
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
-                PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
+                Politekhnichnyi_Instytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
                 , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,
                 PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
-                 Khreshchatyk , PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
+                 Khreshchatyk , PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnipro, PathDniproHidropark,
                  Hidropark, PathHidroparkLivoberezhna, Livoberezhna, PathLivoberezhnaDarnytsia, Darnytsia, PathDarnytsiaChernihivska,
                  Chernihivska, PathChernihivskaLisova, Lisova
             };
             _pathsBlueLine = new FrameworkElement[]
             {
-                HeroivDnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
-                Petrivka, PathPetrivkaTarasaShevchenka, TarasaShevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
-                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha, PathPoshtovaPloshchaMaidanNezalezhnosti,MaidanNezalezhnosti,
-                PathMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
-                PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
-                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
+                Heroiv_Dnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
+                Petrivka, PathPetrivkaTarasaShevchenka, Tarasa_Shevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
+                Kontraktova_Ploshcha, PathKontraktovaPloshchaPochtovaPloshcha, Poshtova_Ploshcha, PathPoshtovaPloshchaMaidanNezalezhnosti,Maidan_Nezalezhnosti,
+                PathMaidanNezalezhnostiPloshchaLvaTolstoho, Ploshcha_Lva_Tolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                Palats_Ukrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
+                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, Vystavkovyi_Tsentr, PathVystavkovyiTsentrIpodrom,
                 Ipodrom, PathIpodromTeremky, Teremky
             };
 
             _pathsGreenLine = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota,PathZolotiVorotaPalatsSportu,PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu,
+                Zoloti_Vorota,PathZolotiVorotaPalatsSportu,PathPalatsSportuZolotiVorota, Palats_Sportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu,
                 Klovska, PathKlovskaPecherska,
-                Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
+                Pecherska, PathPecherskaDruzhbyNarodiv, Druzhby_Narodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
-                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
+                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, Chervony_Khutir
             };
 
             _pathsR1B1 = new FrameworkElement[]
@@ -90,14 +91,14 @@ namespace MetroNavigation
                 Academmistechko, PathAcademmistechkoZhytomyrska, Zhytomyrska, PathZhytomyrskaSviatoshyn, Sviatoshyn
                 , PathSviatoshynNyvky, Nyvky, PathNyvkyBeresteiska, Beresteiska,
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
-                PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
+                Politekhnichnyi_Instytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
                 , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,
                 PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
-                 Khreshchatyk,MaidanNezalezhnosti, PathPoshtovaPloshchaMaidanNezalezhnosti,PoshtovaPloshcha,
-                 PathKontraktovaPloshchaPochtovaPloshcha,KontraktovaPloshcha, PathTarasaShevchenkaKontraktovaPloshcha,
-                 TarasaShevchenka,PathPetrivkaTarasaShevchenka,Petrivka,PathObolonPetrivka,Obolon,PathMinskaObolon,
-                 Minska,PathHeroivDnipraMinska,HeroivDnipra
+                 Khreshchatyk,Maidan_Nezalezhnosti, PathPoshtovaPloshchaMaidanNezalezhnosti,Poshtova_Ploshcha,
+                 PathKontraktovaPloshchaPochtovaPloshcha,Kontraktova_Ploshcha, PathTarasaShevchenkaKontraktovaPloshcha,
+                 Tarasa_Shevchenka,PathPetrivkaTarasaShevchenka,Petrivka,PathObolonPetrivka,Obolon,PathMinskaObolon,
+                 Minska,PathHeroivDnipraMinska,Heroiv_Dnipra
             };
 
             _pathsR1G2 = new FrameworkElement[]
@@ -105,12 +106,13 @@ namespace MetroNavigation
                 Academmistechko, PathAcademmistechkoZhytomyrska, Zhytomyrska, PathZhytomyrskaSviatoshyn, Sviatoshyn
                 , PathSviatoshynNyvky, Nyvky, PathNyvkyBeresteiska, Beresteiska,
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
-                PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
+                Politekhnichnyi_Instytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
-                Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
+                , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,Zoloti_Vorota,PathZolotiVorotaPalatsSportu,
+                PathPalatsSportuZolotiVorota, Palats_Sportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
+                Pecherska, PathPecherskaDruzhbyNarodiv, Druzhby_Narodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
-                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
+                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, Chervony_Khutir
             };
 
             _pathsR1G1 = new FrameworkElement[]
@@ -118,9 +120,9 @@ namespace MetroNavigation
                 Academmistechko, PathAcademmistechkoZhytomyrska, Zhytomyrska, PathZhytomyrskaSviatoshyn, Sviatoshyn
                 , PathSviatoshynNyvky, Nyvky, PathNyvkyBeresteiska, Beresteiska,
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
-                PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
+                Politekhnichnyi_Instytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
-                , PathUniversytetTeatralna, PathTeatralnaUniversytet, Teatralna, ZolotiVorota,PathLukianivskaZolotiVorota,
+                , PathUniversytetTeatralna, PathTeatralnaUniversytet, Teatralna, Zoloti_Vorota,PathLukianivskaZolotiVorota,
                 Lukianivska,PathDorohozhychiLukianivska,Dorohozhychi,PathSyretsDorohozhychi, Syrets
             };
 
@@ -129,52 +131,52 @@ namespace MetroNavigation
                 Academmistechko, PathAcademmistechkoZhytomyrska, Zhytomyrska, PathZhytomyrskaSviatoshyn, Sviatoshyn
                 , PathSviatoshynNyvky, Nyvky, PathNyvkyBeresteiska, Beresteiska,
                 PathBeresteiskaShuliavska, Shuliavska, PathShuliavskaPolitekhnichnyiInstytut,
-                PolitekhnichnyiInstytut, PathPolitekhnichnyiInstytutVokzalna,
+                Politekhnichnyi_Instytut, PathPolitekhnichnyiInstytutVokzalna,
                 Vokzalna, PathVokzalnaUniversytet, Universytet
                 , PathUniversytetTeatralna, PathTeatralnaUniversytet,  Teatralna,
                 PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
-                 Khreshchatyk,MaidanNezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
-                PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
-                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
+                 Khreshchatyk,Maidan_Nezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho, Ploshcha_Lva_Tolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                Palats_Ukrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
+                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, Vystavkovyi_Tsentr, PathVystavkovyiTsentrIpodrom,
                 Ipodrom, PathIpodromTeremky, Teremky
             };
             _pathsB1R2 = new FrameworkElement[]
             {
-                HeroivDnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
-                Petrivka, PathPetrivkaTarasaShevchenka, TarasaShevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
-                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha, PathPoshtovaPloshchaMaidanNezalezhnosti,MaidanNezalezhnosti,
-                 Khreshchatyk, PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
+                Heroiv_Dnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
+                Petrivka, PathPetrivkaTarasaShevchenka, Tarasa_Shevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
+                Kontraktova_Ploshcha, PathKontraktovaPloshchaPochtovaPloshcha, Poshtova_Ploshcha, PathPoshtovaPloshchaMaidanNezalezhnosti,Maidan_Nezalezhnosti,
+                 Khreshchatyk, PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnipro, PathDniproHidropark,
                  Hidropark, PathHidroparkLivoberezhna, Livoberezhna, PathLivoberezhnaDarnytsia, Darnytsia, PathDarnytsiaChernihivska,
                  Chernihivska, PathChernihivskaLisova, Lisova
             };
 
             _pathsB1G2 = new FrameworkElement[]
             {
-                HeroivDnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
-                Petrivka, PathPetrivkaTarasaShevchenka, TarasaShevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
-                KontraktovaPloshcha, PathKontraktovaPloshchaPochtovaPloshcha, PoshtovaPloshcha,PathPoshtovaPloshchaMaidanNezalezhnosti,
-                MaidanNezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho,PloshchaLvaTolstoho
-                ,PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
-                Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
+                Heroiv_Dnipra, PathHeroivDnipraMinska, Minska, PathMinskaObolon, Obolon, PathObolonPetrivka,
+                Petrivka, PathPetrivkaTarasaShevchenka, Tarasa_Shevchenka, PathTarasaShevchenkaKontraktovaPloshcha,
+                Kontraktova_Ploshcha, PathKontraktovaPloshchaPochtovaPloshcha, Poshtova_Ploshcha,PathPoshtovaPloshchaMaidanNezalezhnosti,
+                Maidan_Nezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho,Ploshcha_Lva_Tolstoho
+                ,Palats_Sportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
+                Pecherska, PathPecherskaDruzhbyNarodiv, Druzhby_Narodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
-                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
+                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, Chervony_Khutir
             };
             _pathsG1B1 = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu,PloshchaLvaTolstoho, PathMaidanNezalezhnostiPloshchaLvaTolstoho,
-                MaidanNezalezhnosti, PathPoshtovaPloshchaMaidanNezalezhnosti,PoshtovaPloshcha,
-                 PathKontraktovaPloshchaPochtovaPloshcha,KontraktovaPloshcha, PathTarasaShevchenkaKontraktovaPloshcha,
-                 TarasaShevchenka,PathPetrivkaTarasaShevchenka,Petrivka,PathObolonPetrivka,Obolon,PathMinskaObolon,
-                 Minska,PathHeroivDnipraMinska,HeroivDnipra
+                Zoloti_Vorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, Palats_Sportu,Ploshcha_Lva_Tolstoho, PathMaidanNezalezhnostiPloshchaLvaTolstoho,
+                Maidan_Nezalezhnosti, PathPoshtovaPloshchaMaidanNezalezhnosti,Poshtova_Ploshcha,
+                 PathKontraktovaPloshchaPochtovaPloshcha,Kontraktova_Ploshcha, PathTarasaShevchenkaKontraktovaPloshcha,
+                 Tarasa_Shevchenka,PathPetrivkaTarasaShevchenka,Petrivka,PathObolonPetrivka,Obolon,PathMinskaObolon,
+                 Minska,PathHeroivDnipraMinska,Heroiv_Dnipra
             };
 
             _pathsG1R2 = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota, Teatralna,
+                Zoloti_Vorota, Teatralna,
                 PathTeatralnaKhreshchatyk, PathKhreshchatykTeatralna,
-                 Khreshchatyk , PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnepr, PathDniproHidropark,
+                 Khreshchatyk , PathKhreshchatykArsenalna, Arsenalna, PathArsenalnaDnipro, Dnipro, PathDniproHidropark,
                  Hidropark, PathHidroparkLivoberezhna, Livoberezhna, PathLivoberezhnaDarnytsia, Darnytsia, PathDarnytsiaChernihivska,
                  Chernihivska, PathChernihivskaLisova, Lisova
             };
@@ -182,49 +184,48 @@ namespace MetroNavigation
             _pathsG1B2 = new FrameworkElement[]
             {
                 Syrets, PathSyretsDorohozhychi, Dorohozhychi, PathDorohozhychiLukianivska, Lukianivska, PathLukianivskaZolotiVorota,
-                ZolotiVorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
-                PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
-                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
+                Zoloti_Vorota,PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, Palats_Sportu, Ploshcha_Lva_Tolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                Palats_Ukrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
+                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, Vystavkovyi_Tsentr, PathVystavkovyiTsentrIpodrom,
                 Ipodrom, PathIpodromTeremky, Teremky
             };
 
             _pathsR2B2 = new FrameworkElement[]
             {
                 Lisova,PathChernihivskaLisova,Chernihivska,PathDarnytsiaChernihivska,Darnytsia,PathLivoberezhnaDarnytsia,Livoberezhna,PathHidroparkLivoberezhna,
-                Hidropark,PathDniproHidropark,Dnepr,PathArsenalnaDnipro,Arsenalna,PathKhreshchatykArsenalna,Khreshchatyk,
-                MaidanNezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho, PloshchaLvaTolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
-                PalatsUkrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
-                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, VystavkovyiTsentr, PathVystavkovyiTsentrIpodrom,
+                Hidropark,PathDniproHidropark,Dnipro,PathArsenalnaDnipro,Arsenalna,PathKhreshchatykArsenalna,Khreshchatyk,
+                Maidan_Nezalezhnosti,PathMaidanNezalezhnostiPloshchaLvaTolstoho, Ploshcha_Lva_Tolstoho, PathPloshchaLvaTolstohoOlimpiiska, Olimpiiska, PathOlimpiiskaPalatsUkrayina,
+                Palats_Ukrayina, PathPalatsUkrayinaLybidska, Lybidska, PathLybidskaDemiivska, Demiivska, PathDemiivskaHolosiivka, Holosiivska,
+                PathHolosiivskaVasylkivska, Vasylkivska, PathVasylkivskaVystavkovyiTsentr, Vystavkovyi_Tsentr, PathVystavkovyiTsentrIpodrom,
                 Ipodrom, PathIpodromTeremky, Teremky
             };
             _pathsR2G2 = new FrameworkElement[]
             {
                 Lisova,PathChernihivskaLisova,Chernihivska,PathDarnytsiaChernihivska,Darnytsia,PathLivoberezhnaDarnytsia,Livoberezhna,PathHidroparkLivoberezhna,
-                Hidropark,PathDniproHidropark,Dnepr,PathArsenalnaDnipro,Arsenalna,PathKhreshchatykArsenalna,Khreshchatyk, PathKhreshchatykTeatralna, PathTeatralnaKhreshchatyk
-                ,Teatralna,ZolotiVorota, PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
-                Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
+                Hidropark,PathDniproHidropark,Dnipro,PathArsenalnaDnipro,Arsenalna,PathKhreshchatykArsenalna,Khreshchatyk, PathKhreshchatykTeatralna, PathTeatralnaKhreshchatyk
+                ,Teatralna,Zoloti_Vorota, PathZolotiVorotaPalatsSportu, PathPalatsSportuZolotiVorota, Palats_Sportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
+                Pecherska, PathPecherskaDruzhbyNarodiv, Druzhby_Narodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
-                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
+                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, Chervony_Khutir
             };
             _pathsB2G2 = new FrameworkElement[]
             {
-                Teremky,PathIpodromTeremky,Ipodrom,PathVystavkovyiTsentrIpodrom,VystavkovyiTsentr,PathVasylkivskaVystavkovyiTsentr,Vasylkivska,
+                Teremky,PathIpodromTeremky,Ipodrom,PathVystavkovyiTsentrIpodrom,Vystavkovyi_Tsentr,PathVasylkivskaVystavkovyiTsentr,Vasylkivska,
                 PathHolosiivskaVasylkivska,Holosiivska,PathDemiivskaHolosiivka,Demiivska,PathLybidskaDemiivska,Lybidska,PathPalatsUkrayinaLybidska,
-                PalatsUkrayina,PathOlimpiiskaPalatsUkrayina,Olimpiiska,PathPloshchaLvaTolstohoOlimpiiska,PloshchaLvaTolstoho,
-                PalatsSportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
-                Pecherska, PathPecherskaDruzhbyNarodiv, DruzhbyNarodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
+                Palats_Ukrayina,PathOlimpiiskaPalatsUkrayina,Olimpiiska,PathPloshchaLvaTolstohoOlimpiiska,Ploshcha_Lva_Tolstoho,
+                Palats_Sportu, PathPalatsSportuKlovska, PathKlovskaPalatsSportu, Klovska, PathKlovskaPecherska,
+                Pecherska, PathPecherskaDruzhbyNarodiv, Druzhby_Narodiv, PathDruzhbyNarodivVydubychi, Vydubychi, PathVydubychiSlavutych,
                 Slavutych, PathSlavutychOsokorky, Osokorky, PathOsokorkyPozniaky, Pozniaky, PathPozniakyKharkivska, Kharkivska,
-                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, ChervonyKhutir
+                PathKharkivskaVyrlytsia, Vyrlytsia, PathVyrlytsiaBorispilska, Borispilska, PathBoryspilskaChervonyKhutir, Chervony_Khutir
             };
             SubscribeOnEvent();
-            _timerEllipse.Tick += TimerEllipseAnimatedEllipse;
-            _timerEllipse.Interval = TimeSpan.FromMilliseconds(_speed);
+            _timerEllipse.Tick += TimerEllipseAnimated;
+            _timerEllipse.Interval = TimeSpan.FromMilliseconds(Time);
             _timerRectangle.Tick += TimerAnimatedRectangle;
-            _timerRectangle.Interval = TimeSpan.FromMilliseconds(_speed);
+            _timerRectangle.Interval = TimeSpan.FromMilliseconds(Time);
         }
 
-
-
+        
 
         private void SubscribeOnEvent()
         {
@@ -241,7 +242,6 @@ namespace MetroNavigation
                 path.MouseDown += ClickMouseAction;
             }
         }
-
         #region ClickMouseAction
 
         private void ClickMouseAction(object sender, MouseButtonEventArgs e)
@@ -252,6 +252,7 @@ namespace MetroNavigation
                 case ChooseStation.Start:
                     if (point != null)
                     {
+                        TextBlockWay.Text += point.Name + "\n";
                         point.MouseDown -= ClickMouseAction;
                         _tempStart.Fill = point.Fill;
                         point.Fill = Brushes.Yellow;
@@ -263,6 +264,7 @@ namespace MetroNavigation
                     _startStation.MouseDown += ClickMouseAction;
                     if (point != null)
                     {
+                        TextBlockWay.Text += point.Name + "\n";
                         _tempEnd.Fill = point.Fill;
                         point.Fill = Brushes.Yellow;
                         _endStation = point;
@@ -357,7 +359,7 @@ namespace MetroNavigation
                     return Order.Desc;
                 }
             }
-            return Order.Default;
+            return Order.Asc;
         }
 
         private Ways ChoosenWay(Ellipse startStation, Ellipse endStation)
@@ -392,38 +394,9 @@ namespace MetroNavigation
                 return Ways.R2G2;
             if (_pathsB2G2.Contains(startStation) && _pathsB2G2.Contains(endStation))
                 return Ways.B2G2;
-            return Ways.Default;
+            return Ways.RedLine;
         }
         #endregion
-
-        #region Cleaner
-
-        private void Cleaner()
-        {
-            var i = 0;
-            _startStation.Fill = _tempStart.Fill;
-            _endStation.Fill = _tempEnd.Fill;
-
-            foreach (var ellipse in _listEllipse)
-            {
-                ellipse.Fill = Brushes.White;
-            }
-            foreach (var rect in _listRectangle)
-            {
-                rect.Fill = _colors[i];
-                i++;
-            }
-            _listRectangle.Clear();
-            _listEllipse.Clear();
-            _colors.Clear();
-            if (_timerEllipse.IsEnabled)
-                _timerEllipse.Stop();
-            if (_timerRectangle.IsEnabled)
-                _timerRectangle.Stop();
-        }
-
-        #endregion
-
         #region SeparateArrays
 
         private void SeparatedPath(Ellipse startStation, Ellipse endStation, FrameworkElement[] array, Order pathOrder )
@@ -451,7 +424,6 @@ namespace MetroNavigation
                                 var rect = (Rectangle)array[i];
                                 _colors.Add(rect.Fill);
                             }
-
                         }
                         break;
                     }
@@ -478,27 +450,31 @@ namespace MetroNavigation
                         }
                         break;
                     }
-
             }
-
-            _indexR = 0;
-            _indexE = 0;
-
-            if (!_timerEllipse.IsEnabled)
-                _timerEllipse.Start();
-            if (!_timerRectangle.IsEnabled)
-                _timerRectangle.Start();
+            if (_listRectangle.Count == 0)
+            {
+                ProgressBar.Value = 100;
+            }
+            else
+            {
+                _indexR = 0;
+                _indexE = 0;
+                if (!_timerEllipse.IsEnabled)
+                    _timerEllipse.Start();
+                if (!_timerRectangle.IsEnabled)
+                    _timerRectangle.Start();
+            }
         }
         #endregion
-
         #region AnimatedRoute
-        private void TimerEllipseAnimatedEllipse(object sender, EventArgs eventArgs)
+        private void TimerEllipseAnimated(object sender, EventArgs eventArgs)
         {
             var flag = true;
-
             if (_indexE + 1 == _listEllipse.Count)
             {
                 ColorAnimated(_listEllipse[_indexE]);
+                
+                ProgressBar.Value = ProgressBar.Value % 2 == 0? 100 / _listEllipse.Count * (_indexE+1): 100 / _listEllipse.Count * (_indexE + 2);
                 _timerEllipse.Stop();
                 flag = false;
             }
@@ -512,8 +488,10 @@ namespace MetroNavigation
             {
                 ColorAnimated(_listEllipse[_indexE]);
                 _indexE++;
+                ProgressBar.Value = 100/_listEllipse.Count * _indexE;
             }
         }
+
 
         private void TimerAnimatedRectangle(object sender, EventArgs e)
         {
@@ -535,13 +513,42 @@ namespace MetroNavigation
         private void ColorAnimated(UIElement element)
         {
             var storyboard = new Storyboard();
-            var colorAnimation = new ColorAnimation(Colors.Yellow, TimeSpan.FromMilliseconds(_speed));
+            var colorAnimation = new ColorAnimation(Colors.Yellow, TimeSpan.FromMilliseconds(Time));
             element.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation);
             Storyboard.SetTarget(colorAnimation, element);
             Storyboard.SetTargetProperty(colorAnimation, new PropertyPath("Fill.Color"));
             storyboard.Children.Add(colorAnimation);
             storyboard.Begin();
         }
+        #endregion
+        #region Cleaner
+
+        private void Cleaner()
+        {
+            var i = 0;
+            _startStation.Fill = _tempStart.Fill;
+            _endStation.Fill = _tempEnd.Fill;
+
+            foreach (var ellipse in _listEllipse)
+            {
+                ellipse.Fill = Brushes.White;
+            }
+            foreach (var rect in _listRectangle)
+            {
+                rect.Fill = _colors[i];
+                i++;
+            }
+            TextBlockWay.Text = null;
+            _listRectangle.Clear();
+            _listEllipse.Clear();
+            _colors.Clear();
+            ProgressBar.Value = 0;
+            if (_timerEllipse.IsEnabled)
+                _timerEllipse.Stop();
+            if (_timerRectangle.IsEnabled)
+                _timerRectangle.Stop();
+        }
+
         #endregion
     }
 }

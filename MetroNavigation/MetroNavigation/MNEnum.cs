@@ -9,7 +9,6 @@ internal enum Order
 {
     Asc,
     Desc,
-    Default
 }
 
 internal enum Ways
@@ -30,5 +29,4 @@ internal enum Ways
     R2G2,
     G2B2,
     B2G2,
-    Default
 }

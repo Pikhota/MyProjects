@@ -18,13 +18,13 @@
         <Ellipse x:Name="Nyvky" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="179,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Beresteiska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="229,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Shuliavska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="279,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="PolitekhnichnyiInstytut" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="335,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Politekhnichnyi_Instytut" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="335,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Vokzalna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="395,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Universytet" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="445,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Teatralna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="529,370,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Khreshchatyk" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Arsenalna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="709,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="Dnepr" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="779,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Dnipro" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="779,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Hidropark" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="829,289,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Livoberezhna" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="859,259,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Darnytsia" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="889,229,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
@@ -112,22 +112,22 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Ellipse x:Name="HeroivDnipra" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Heroiv_Dnipra" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Minska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,59,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Obolon" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,99,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Petrivka" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,139,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="TarasaShevchenka" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,189,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="KontraktovaPloshcha" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,229,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="PoshtovaPloshcha" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,269,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="MaidanNezalezhnosti" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,318,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="PloshchaLvaTolstoho" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Tarasa_Shevchenka" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,189,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Kontraktova_Ploshcha" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,229,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Poshtova_Ploshcha" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,269,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Maidan_Nezalezhnosti" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,318,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Ploshcha_Lva_Tolstoho" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Olimpiiska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,479,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="PalatsUkrayina" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,529,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Palats_Ukrayina" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,529,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Lybidska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,599,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Demiivska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="619,660,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Holosiivska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="579,700,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Vasylkivska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="489,699,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="VystavkovyiTsentr" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="419,699,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Vystavkovyi_Tsentr" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="419,699,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Ipodrom" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="359,699,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Teremky" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="289,699,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Rectangle x:Name="PathHeroivDnipraMinska" Fill="Blue" HorizontalAlignment="Left" Height="32" Margin="626,34,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1"/>
@@ -195,11 +195,11 @@
         <Ellipse x:Name="Syrets" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="299,139,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Dorohozhychi" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="339,179,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Lukianivska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="379,219,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="ZolotiVorota" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="519,359,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="PalatsSportu" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="638,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Zoloti_Vorota" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="519,359,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Palats_Sportu" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="638,399,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Klovska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="699,419,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Pecherska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="719,441,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="DruzhbyNarodiv" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="749,469,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Druzhby_Narodiv" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="749,469,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Vydubychi" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="779,500,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Slavutych" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="829,549,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Osokorky" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="850,571,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
@@ -207,7 +207,7 @@
         <Ellipse x:Name="Kharkivska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="909,629,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Vyrlytsia" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="939,659,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Ellipse x:Name="Borispilska" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="970,689,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
-        <Ellipse x:Name="ChervonyKhutir" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="999,719,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+        <Ellipse x:Name="Chervony_Khutir" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="22" Margin="999,719,0,0" Stroke="Black" VerticalAlignment="Top" Width="22"/>
         <Rectangle x:Name="PathSyretsDorohozhychi" Fill="Green" HorizontalAlignment="Left" Height="57" Margin="324,142,0,0" Stroke="Black" VerticalAlignment="Top" Width="10" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -378,5 +378,10 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Label x:Name="Details" Content="Details:" FontSize="25" FontStyle="Normal" HorizontalAlignment="Left" Margin="13,48,0,0" VerticalAlignment="Top" Width="107"/>
+        <TextBlock x:Name="TextBlockWay" HorizontalAlignment="Left" Margin="14,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="236" Width="137"/>
+        <TextBlock x:Name="TextBlockTime" HorizontalAlignment="Left" Margin="156,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="84" Height="269"/>
+        <ProgressBar x:Name="ProgressBar"  HorizontalAlignment="Left" Height="29" Margin="14,326,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label x:Name="LaProgressBar" Content="{Binding ElementName=ProgressBar, Path=Value}" HorizontalAlignment="Left" Margin="75,329,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
